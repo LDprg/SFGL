@@ -14,30 +14,32 @@
 #include "Triangel.h"
 
 std::vector<Triangel> Triangels;
-std::vector<verticies> Verticies;
+std::vector<std::shared_ptr<verticies>> Verticies;
 
 int main()
 {
 	WindowCreate();
 
-	Verticies.emplace_back();
+	verticies Vertice;
 
-	Verticies[0].vertexBufferData.emplace_back(0.0f);
-	Verticies[0].vertexBufferData.emplace_back(1.0f);
-	Verticies[0].vertexBufferData.emplace_back(1.0f);
-	Verticies[0].vertexBufferData.emplace_back(-1.0f);
-	Verticies[0].vertexBufferData.emplace_back(-1.0f);
-	Verticies[0].vertexBufferData.emplace_back(-1.0f);
+	Vertice.vertexBufferData.emplace_back(0.0f);
+	Vertice.vertexBufferData.emplace_back(1.0f);
+	Vertice.vertexBufferData.emplace_back(1.0f);
+	Vertice.vertexBufferData.emplace_back(-1.0f);
+	Vertice.vertexBufferData.emplace_back(-1.0f);
+	Vertice.vertexBufferData.emplace_back(-1.0f);
+		  
+	Vertice.colorBufferData.emplace_back(1.f);
+	Vertice.colorBufferData.emplace_back(0.f);
+	Vertice.colorBufferData.emplace_back(0.f);
+	Vertice.colorBufferData.emplace_back(0.f);
+	Vertice.colorBufferData.emplace_back(1.f);
+	Vertice.colorBufferData.emplace_back(0.f);
+	Vertice.colorBufferData.emplace_back(0.f);
+	Vertice.colorBufferData.emplace_back(0.f);
+	Vertice.colorBufferData.emplace_back(1.f);
 
-	Verticies[0].colorBufferData.emplace_back(1.f);
-	Verticies[0].colorBufferData.emplace_back(0.f);
-	Verticies[0].colorBufferData.emplace_back(0.f);
-	Verticies[0].colorBufferData.emplace_back(0.f);
-	Verticies[0].colorBufferData.emplace_back(1.f);
-	Verticies[0].colorBufferData.emplace_back(0.f);
-	Verticies[0].colorBufferData.emplace_back(0.f);
-	Verticies[0].colorBufferData.emplace_back(0.f);
-	Verticies[0].colorBufferData.emplace_back(1.f);
+	Verticies.emplace_back(std::make_shared<verticies>(Vertice));
 
 	VerticiesUpdate(Verticies);
 

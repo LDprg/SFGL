@@ -1,5 +1,6 @@
 #pragma once
 
+#include <iostream>
 #include <vector>
 
 #include <GL/glew.h>
@@ -15,6 +16,6 @@ struct verticies
 	std::vector <GLfloat> colorBufferData;
 };
 
-void VerticiesUpdate(std::vector<verticies> &Verticies);
-void VerticiesDraw(std::vector<verticies> &Verticies);
-void VerticiesClean(std::vector<verticies> &Verticies);
+void VerticiesUpdate(std::vector<std::shared_ptr<verticies>> Verticies);
+void VerticiesDraw(std::vector<std::shared_ptr<verticies>> &Verticies);
+void VerticiesClean(std::vector<std::shared_ptr<verticies>> &Verticies);
