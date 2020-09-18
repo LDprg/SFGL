@@ -158,6 +158,7 @@
     <ClCompile Include="loadTexture.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Triangel.cpp" />
+    <ClCompile Include="Verticies.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>

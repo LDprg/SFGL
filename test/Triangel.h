@@ -14,11 +14,6 @@ struct Triangel
 {
 	glm::vec2 EdgePos[3];
 	glm::vec3 EdgeColor[3];
-
 };
 
 void Triangel2Verticies(std::vector<Triangel> &Triangels, std::vector<verticies> &Verticies);
-
-void TriangelCreate();
-void TriangelDraw();
-void TriangelClean();

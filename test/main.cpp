@@ -10,19 +10,42 @@
 //#include "loadTexture.h"
 
 #include "window.h"
+#include "Verticies.h"
 #include "Triangel.h"
+
+std::vector<Triangel> Triangels;
+std::vector<verticies> Verticies;
 
 int main()
 {
 	WindowCreate();
 
-	TriangelCreate();
+	Verticies.emplace_back();
+
+	Verticies[0].vertexBufferData.emplace_back(0.0f);
+	Verticies[0].vertexBufferData.emplace_back(1.0f);
+	Verticies[0].vertexBufferData.emplace_back(1.0f);
+	Verticies[0].vertexBufferData.emplace_back(-1.0f);
+	Verticies[0].vertexBufferData.emplace_back(-1.0f);
+	Verticies[0].vertexBufferData.emplace_back(-1.0f);
+
+	Verticies[0].colorBufferData.emplace_back(1.f);
+	Verticies[0].colorBufferData.emplace_back(0.f);
+	Verticies[0].colorBufferData.emplace_back(0.f);
+	Verticies[0].colorBufferData.emplace_back(0.f);
+	Verticies[0].colorBufferData.emplace_back(1.f);
+	Verticies[0].colorBufferData.emplace_back(0.f);
+	Verticies[0].colorBufferData.emplace_back(0.f);
+	Verticies[0].colorBufferData.emplace_back(0.f);
+	Verticies[0].colorBufferData.emplace_back(1.f);
+
+	VerticiesUpdate(Verticies);
 
 	do
 	{
 		WindowClearScreen();
 
-		TriangelDraw();
+		VerticiesDraw(Verticies);
 
 		WindowDraw();
 
@@ -32,7 +55,7 @@ int main()
 		}
 	} while (!WindowShouldClose());
 
-	TriangelClean();
+	VerticiesClean(Verticies);
 
 	WindowClean();
 

@@ -14,3 +14,7 @@ struct verticies
 	std::vector <GLfloat> vertexBufferData;
 	std::vector <GLfloat> colorBufferData;
 };
+
+void VerticiesUpdate(std::vector<verticies> &Verticies);
+void VerticiesDraw(std::vector<verticies> &Verticies);
+void VerticiesClean(std::vector<verticies> &Verticies);
