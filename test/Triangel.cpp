@@ -1,24 +1,29 @@
 #include "Triangel.h"
 
-void Triangel2Verticies(std::vector<Triangel> &Triangels, std::vector<verticies>& Verticies)
+void Triangel2Verticies(std::vector<Triangel> &Triangels, std::vector<std::shared_ptr<verticies>>& Verticies)
 {
 	for (int i = 0; i < Triangels.size(); i++)
 	{
-		Verticies[i].vertexBufferData.clear();
-
-		for (int i = 0; i < 3; i++)
+		while (Triangels.size() > Verticies.size()- Triangels.size()*i)
 		{
-			Verticies[i].vertexBufferData.emplace_back(Triangels[i].EdgePos[i*2].x);
-			Verticies[i].vertexBufferData.emplace_back(Triangels[i].EdgePos[i*2 + 1].y);
+			Verticies.emplace_back(std::make_shared<verticies>());
 		}
 
-		Verticies[i].colorBufferData.clear();
-		
-		for (int i = 0; i < 3; i++)
+		Verticies[i]->vertexBufferData.clear();
+
+		for (int j = 0; j < 3; j++)
 		{
-			Verticies[i].vertexBufferData.emplace_back(Triangels[i].EdgeColor[i*3].r);
-			Verticies[i].vertexBufferData.emplace_back(Triangels[i].EdgeColor[i*3 + 1].g);
-			Verticies[i].vertexBufferData.emplace_back(Triangels[i].EdgeColor[i*3 + 2].b);
+			Verticies[i]->vertexBufferData.emplace_back(Triangels[i].EdgePos[j][0]);
+			Verticies[i]->vertexBufferData.emplace_back(Triangels[i].EdgePos[j][1]);
+		}
+
+		Verticies[i]->colorBufferData.clear();
+		
+		for (int j = 0; j < 3; j++)
+		{
+			Verticies[i]->colorBufferData.emplace_back(Triangels[i].EdgeColor[j][0]);
+			Verticies[i]->colorBufferData.emplace_back(Triangels[i].EdgeColor[j][1]);
+			Verticies[i]->colorBufferData.emplace_back(Triangels[i].EdgeColor[j][2]);
 		}
 	}
 }
