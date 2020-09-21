@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SFGL
-   &#160;<span id="projectnumber">0</span>
+   &#160;<span id="projectnumber">0.0</span>
    </div>
-   <div id="projectbrief">Libary</div>
+   <div id="projectbrief">Super Fast Graphics Libary</div>
   </td>
  </tr>
  </tbody>
@@ -68,6 +68,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">Triangel.cpp File Reference</div>  </div>
@@ -75,66 +76,16 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="../../da/d3e/_triangel_8h_source.html">Triangel.h</a>&quot;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:da/d21/namespacesfgl"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d21/namespacesfgl.html">sfgl</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad17089e008a4e50ee731bb94444bdc2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d0/df9/_triangel_8cpp.html#ad17089e008a4e50ee731bb94444bdc2e">Triangel2Verticies</a> (std::vector&lt; <a class="el" href="../../da/dd8/struct_triangel.html">Triangel</a> &gt; &amp;Triangels, std::vector&lt; std::shared_ptr&lt; <a class="el" href="../../da/dea/structverticies.html">verticies</a> &gt;&gt; &amp;Verticies)</td></tr>
-<tr class="separator:ad17089e008a4e50ee731bb94444bdc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd805f5ae250e6ae607b6e160227f977"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d21/namespacesfgl.html#acd805f5ae250e6ae607b6e160227f977">sfgl::Triangel2Verticies</a> (std::vector&lt; Triangel &gt; &amp;Triangels, std::vector&lt; std::shared_ptr&lt; verticies &gt;&gt; &amp;Verticies)</td></tr>
+<tr class="separator:acd805f5ae250e6ae607b6e160227f977"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="ad17089e008a4e50ee731bb94444bdc2e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad17089e008a4e50ee731bb94444bdc2e">&#9670;&nbsp;</a></span>Triangel2Verticies()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Triangel2Verticies </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="../../da/dd8/struct_triangel.html">Triangel</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>Triangels</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; std::shared_ptr&lt; <a class="el" href="../../da/dea/structverticies.html">verticies</a> &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>Verticies</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;{</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; Triangels.size(); i++)</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;    {</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;        <span class="keywordflow">while</span> (Triangels.size() &gt; Verticies.size()- Triangels.size()*i)</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        {</div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;            Verticies.emplace_back(std::make_shared&lt;verticies&gt;());</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;        }</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        Verticies[i]-&gt;vertexBufferData.clear();</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 3; j++)</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        {</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;            Verticies[i]-&gt;vertexBufferData.emplace_back(Triangels[i].EdgePos[j][0]);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;            Verticies[i]-&gt;vertexBufferData.emplace_back(Triangels[i].EdgePos[j][1]);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        }</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        Verticies[i]-&gt;colorBufferData.clear();</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> j = 0; j &lt; 3; j++)</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        {</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;            Verticies[i]-&gt;colorBufferData.emplace_back(Triangels[i].EdgeColor[j][0]);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            Verticies[i]-&gt;colorBufferData.emplace_back(Triangels[i].EdgeColor[j][1]);</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;            Verticies[i]-&gt;colorBufferData.emplace_back(Triangels[i].EdgeColor[j][2]);</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        }</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    }</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
-</div><!-- fragment -->
-</div>
-</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

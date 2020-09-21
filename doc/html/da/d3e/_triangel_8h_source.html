@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SFGL
-   &#160;<span id="projectnumber">0</span>
+   &#160;<span id="projectnumber">0.0</span>
    </div>
-   <div id="projectbrief">Libary</div>
+   <div id="projectbrief">Super Fast Graphics Libary</div>
   </td>
  </tr>
  </tbody>
@@ -81,26 +81,27 @@ $(function() {
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/df0/_verticies_8h.html">Verticies.h</a>&quot;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../da/d21/namespacesfgl.html">   11</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../da/d21/namespacesfgl.html">sfgl</a></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="keyword">namespace </span><a class="code" href="../../da/d21/namespacesfgl.html">sfgl</a></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;{</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d3/d6b/structsfgl_1_1_triangel.html">   17</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d3/d6b/structsfgl_1_1_triangel.html">Triangel</a></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    {</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d3/d6b/structsfgl_1_1_triangel.html#a1beef7b3498026c82b2dcbf379f10404">   22</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="../../d3/d6b/structsfgl_1_1_triangel.html#a1beef7b3498026c82b2dcbf379f10404">EdgePos</a>[3][2];</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d3/d6b/structsfgl_1_1_triangel.html">   15</a></span>&#160;    <span class="keyword">struct </span><a class="code" href="../../d3/d6b/structsfgl_1_1_triangel.html">Triangel</a></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    {</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d3/d6b/structsfgl_1_1_triangel.html#a1beef7b3498026c82b2dcbf379f10404">   18</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="../../d3/d6b/structsfgl_1_1_triangel.html#a1beef7b3498026c82b2dcbf379f10404">EdgePos</a>[3][2];</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d3/d6b/structsfgl_1_1_triangel.html#aedb346ef85f449f55d720baa84881726">   21</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="../../d3/d6b/structsfgl_1_1_triangel.html#aedb346ef85f449f55d720baa84881726">EdgeColor</a>[3][3];</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;    };</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d3/d6b/structsfgl_1_1_triangel.html#aedb346ef85f449f55d720baa84881726">   27</a></span>&#160;        <span class="keywordtype">float</span> <a class="code" href="../../d3/d6b/structsfgl_1_1_triangel.html#aedb346ef85f449f55d720baa84881726">EdgeColor</a>[3][3];</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    };</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../da/d21/namespacesfgl.html#acd805f5ae250e6ae607b6e160227f977">   35</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d21/namespacesfgl.html#acd805f5ae250e6ae607b6e160227f977">Triangel2Verticies</a>(std::vector&lt;Triangel&gt;&amp; Triangels, std::vector&lt;std::shared_ptr&lt;verticies&gt;&gt;&amp; Verticies);</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;}</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="../../da/d21/namespacesfgl.html#acd805f5ae250e6ae607b6e160227f977">Triangel2Verticies</a>(std::vector&lt;Triangel&gt;&amp; Triangels, std::vector&lt;std::shared_ptr&lt;verticies&gt;&gt;&amp; Verticies);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="astructsfgl_1_1_triangel_html"><div class="ttname"><a href="../../d3/d6b/structsfgl_1_1_triangel.html">sfgl::Triangel</a></div><div class="ttdef"><b>Definition:</b> Triangel.h:18</div></div>
-<div class="ttc" id="anamespacesfgl_html"><div class="ttname"><a href="../../da/d21/namespacesfgl.html">sfgl</a></div><div class="ttdef"><b>Definition:</b> Triangel.h:12</div></div>
+<div class="ttc" id="astructsfgl_1_1_triangel_html"><div class="ttname"><a href="../../d3/d6b/structsfgl_1_1_triangel.html">sfgl::Triangel</a></div><div class="ttdoc">Struct of the data of a Triangel.</div><div class="ttdef"><b>Definition:</b> Triangel.h:16</div></div>
+<div class="ttc" id="anamespacesfgl_html"><div class="ttname"><a href="../../da/d21/namespacesfgl.html">sfgl</a></div><div class="ttdef"><b>Definition:</b> Triangel.cpp:4</div></div>
 <div class="ttc" id="a_verticies_8h_html"><div class="ttname"><a href="../../d6/df0/_verticies_8h.html">Verticies.h</a></div></div>
-<div class="ttc" id="anamespacesfgl_html_acd805f5ae250e6ae607b6e160227f977"><div class="ttname"><a href="../../da/d21/namespacesfgl.html#acd805f5ae250e6ae607b6e160227f977">sfgl::Triangel2Verticies</a></div><div class="ttdeci">void Triangel2Verticies(std::vector&lt; Triangel &gt; &amp;Triangels, std::vector&lt; std::shared_ptr&lt; verticies &gt;&gt; &amp;Verticies)</div></div>
-<div class="ttc" id="astructsfgl_1_1_triangel_html_a1beef7b3498026c82b2dcbf379f10404"><div class="ttname"><a href="../../d3/d6b/structsfgl_1_1_triangel.html#a1beef7b3498026c82b2dcbf379f10404">sfgl::Triangel::EdgePos</a></div><div class="ttdeci">float EdgePos[3][2]</div><div class="ttdef"><b>Definition:</b> Triangel.h:22</div></div>
-<div class="ttc" id="astructsfgl_1_1_triangel_html_aedb346ef85f449f55d720baa84881726"><div class="ttname"><a href="../../d3/d6b/structsfgl_1_1_triangel.html#aedb346ef85f449f55d720baa84881726">sfgl::Triangel::EdgeColor</a></div><div class="ttdeci">float EdgeColor[3][3]</div><div class="ttdef"><b>Definition:</b> Triangel.h:27</div></div>
+<div class="ttc" id="anamespacesfgl_html_acd805f5ae250e6ae607b6e160227f977"><div class="ttname"><a href="../../da/d21/namespacesfgl.html#acd805f5ae250e6ae607b6e160227f977">sfgl::Triangel2Verticies</a></div><div class="ttdeci">void Triangel2Verticies(std::vector&lt; Triangel &gt; &amp;Triangels, std::vector&lt; std::shared_ptr&lt; verticies &gt;&gt; &amp;Verticies)</div><div class="ttdef"><b>Definition:</b> Triangel.cpp:6</div></div>
+<div class="ttc" id="astructsfgl_1_1_triangel_html_a1beef7b3498026c82b2dcbf379f10404"><div class="ttname"><a href="../../d3/d6b/structsfgl_1_1_triangel.html#a1beef7b3498026c82b2dcbf379f10404">sfgl::Triangel::EdgePos</a></div><div class="ttdeci">float EdgePos[3][2]</div><div class="ttdoc">Postion of Triangel Edge</div><div class="ttdef"><b>Definition:</b> Triangel.h:18</div></div>
+<div class="ttc" id="a_triangel_8h_html"><div class="ttname"><a href="../../da/d3e/_triangel_8h.html">Triangel.h</a></div></div>
+<div class="ttc" id="astructsfgl_1_1_triangel_html_aedb346ef85f449f55d720baa84881726"><div class="ttname"><a href="../../d3/d6b/structsfgl_1_1_triangel.html#aedb346ef85f449f55d720baa84881726">sfgl::Triangel::EdgeColor</a></div><div class="ttdeci">float EdgeColor[3][3]</div><div class="ttdoc">Color of Triangel Edge.</div><div class="ttdef"><b>Definition:</b> Triangel.h:21</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

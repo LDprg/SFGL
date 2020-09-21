@@ -12,9 +12,6 @@ GLuint LoadShaders(const char* vertex_file_path, const char* fragment_file_path)
 	std::ifstream VertexShaderStream(vertex_file_path, std::ios::in);
 	if (VertexShaderStream.is_open())
 	{
-		/*std::stringstream sstr;
-		sstr << VertexShaderStream.rdbuf().;
-		VertexShaderCode = sstr.str();*/
 		VertexShaderCode.assign(std::istreambuf_iterator<char>(VertexShaderStream), std::istreambuf_iterator<char>());
 		VertexShaderStream.close();
 	}
@@ -30,9 +27,6 @@ GLuint LoadShaders(const char* vertex_file_path, const char* fragment_file_path)
 	std::ifstream FragmentShaderStream(fragment_file_path, std::ios::in);
 	if (FragmentShaderStream.is_open())
 	{
-		/*std::stringstream sstr;
-		sstr << FragmentShaderStream.rdbuf();
-		FragmentShaderCode = sstr.str();*/
 		FragmentShaderCode.assign(std::istreambuf_iterator<char>(FragmentShaderStream), std::istreambuf_iterator<char>());
 		FragmentShaderStream.close();
 	}
@@ -51,7 +45,7 @@ GLuint LoadShaders(const char* vertex_file_path, const char* fragment_file_path)
 	glGetShaderiv(VertexShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
 	if (InfoLogLength > 0)
 	{
-		std::vector<char> VertexShaderErrorMessage((char)InfoLogLength + 1);
+		std::vector<char> VertexShaderErrorMessage((unsigned __int64)InfoLogLength + 1);
 		glGetShaderInfoLog(VertexShaderID, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
 		printf("%s\n", &VertexShaderErrorMessage[0]);
 	}
@@ -67,7 +61,7 @@ GLuint LoadShaders(const char* vertex_file_path, const char* fragment_file_path)
 	glGetShaderiv(FragmentShaderID, GL_INFO_LOG_LENGTH, &InfoLogLength);
 	if (InfoLogLength > 0)
 	{
-		std::vector<char> FragmentShaderErrorMessage((char)InfoLogLength + 1);
+		std::vector<char> FragmentShaderErrorMessage((unsigned __int64)InfoLogLength + 1);
 		glGetShaderInfoLog(FragmentShaderID, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
 		printf("%s\n", &FragmentShaderErrorMessage[0]);
 	}
@@ -84,7 +78,7 @@ GLuint LoadShaders(const char* vertex_file_path, const char* fragment_file_path)
 	glGetProgramiv(ProgramID, GL_INFO_LOG_LENGTH, &InfoLogLength);
 	if (InfoLogLength > 0)
 	{
-		std::vector<char> ProgramErrorMessage((char)InfoLogLength + 1);
+		std::vector<char> ProgramErrorMessage((unsigned __int64)InfoLogLength + 1);
 		glGetProgramInfoLog(ProgramID, InfoLogLength, NULL, &ProgramErrorMessage[0]);
 		printf("%s\n", &ProgramErrorMessage[0]);
 	}
