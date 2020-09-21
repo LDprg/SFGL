@@ -112,15 +112,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : Verticies)</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;            {</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                <span class="comment">// Cleanup VBO</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                glDeleteBuffers(1, &amp;i-&gt;vertexBuffer);</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                glDeleteBuffers(1, &amp;i-&gt;colorBuffer);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;            }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a828d905ad2a4f453cd1652b21d3a13aa"></a>
@@ -144,39 +136,7 @@ Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<div class="fragment"><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        {</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : Verticies)</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;            {</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                <span class="comment">// 1st attribute buffer : vertices</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;                glEnableVertexAttribArray(0);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;                glBindBuffer(GL_ARRAY_BUFFER, i-&gt;vertexBuffer);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;                glVertexAttribPointer(</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;                    0,                  <span class="comment">// attribute 0. No particular reason for 0, but must match the layout in the shader.</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                    2,                  <span class="comment">// size</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                    GL_FLOAT,           <span class="comment">// type</span></div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;                    GL_FALSE,           <span class="comment">// normalized?</span></div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;                    0,                  <span class="comment">// stride</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;                    (<span class="keywordtype">void</span>*)0            <span class="comment">// array buffer offset</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;                );</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="comment">// 2nd attribute buffer : color</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;                glEnableVertexAttribArray(1);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                glBindBuffer(GL_ARRAY_BUFFER, i-&gt;colorBuffer);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                glVertexAttribPointer(</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                    1,                  <span class="comment">// attribute 1. No particular reason for 1, but must match the layout in the shader.</span></div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                    3,                  <span class="comment">// size</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;                    GL_FLOAT,           <span class="comment">// type</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;                    GL_FALSE,           <span class="comment">// normalized?</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                    0,                  <span class="comment">// stride</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                    (<span class="keywordtype">void</span>*)0            <span class="comment">// array buffer offset</span></div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                );</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                <span class="comment">// Draw the triangle !</span></div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                glDrawArrays(GL_TRIANGLES, 0, (GLsizei)i-&gt;vertexBufferData.size() / 2); <span class="comment">// Starting from vertex 0; 3 vertices total -&gt; 1 triangle</span></div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                glDisableVertexAttribArray(0);</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 <a id="a65ca1ae197719b774633ca97bd2512c8"></a>
@@ -201,25 +161,7 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="todo"><dt><b><a class="el" href="../../dd/da0/todo.html#_todo000001">Todo:</a></b></dt><dd>Remove Buffer Data for more performance </dd></dl>
-<div class="fragment"><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        {</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;            <span class="keywordflow">for</span> (<span class="keyword">auto</span> i : Verticies)</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;            {</div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;                <span class="comment">// Generate 1 buffer, put the resulting identifier in vertexbuffer</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;                glGenBuffers(1, &amp;i-&gt;vertexBuffer);</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;                <span class="comment">// The following commands will talk about our &#39;vertexbuffer&#39; buffer</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;                glBindBuffer(GL_ARRAY_BUFFER, i-&gt;vertexBuffer);</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;                <span class="comment">// Give our vertices to OpenGL.</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;                glBufferData(GL_ARRAY_BUFFER, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>) * i-&gt;vertexBufferData.size(), i-&gt;vertexBufferData.data(), GL_STATIC_DRAW);</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;                <span class="comment">// Generate 1 buffer, put the resulting identifier in colorbuffer</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;                glGenBuffers(1, &amp;i-&gt;colorBuffer);</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;                <span class="comment">// The following commands will talk about our &#39;colorbuffer&#39; buffer</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;                glBindBuffer(GL_ARRAY_BUFFER, i-&gt;colorBuffer);</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;                <span class="comment">// Give our color to OpenGL.</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;                glBufferData(GL_ARRAY_BUFFER, <span class="keyword">sizeof</span>(<span class="keywordtype">float</span>) * i-&gt;colorBufferData.size(), i-&gt;colorBufferData.data(), GL_STATIC_DRAW);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;            }</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        }</div>
-</div><!-- fragment -->
+
 </div>
 </div>
 </div><!-- contents -->

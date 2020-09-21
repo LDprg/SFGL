@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['todo_20list_20',['Todo List',['../dd/da0/todo.html',1,'']]],
-  ['triangel_21',['Triangel',['../d3/d6b/structsfgl_1_1_triangel.html',1,'sfgl']]],
-  ['triangel_2ecpp_22',['Triangel.cpp',['../d0/df9/_triangel_8cpp.html',1,'']]],
-  ['triangel_2eh_23',['Triangel.h',['../da/d3e/_triangel_8h.html',1,'']]],
-  ['triangel2verticies_24',['Triangel2Verticies',['../da/d21/namespacesfgl.html#a89e89222141ba61d7d4eb29f0edef2c0',1,'sfgl']]]
+  ['sfgl_20_2d_20super_20fast_20graphics_20libary_14',['SFGL - Super Fast Graphics Libary',['../index.html',1,'']]],
+  ['sfgl_15',['sfgl',['../da/d21/namespacesfgl.html',1,'']]],
+  ['shouldclose_16',['ShouldClose',['../d2/dcf/namespacesfgl_1_1_window.html#ad9e4313601657d8a68b79510c1dd90f1',1,'sfgl::Window::ShouldClose(int state)'],['../d2/dcf/namespacesfgl_1_1_window.html#ae11ede8a8c49b18c982a843afad12387',1,'sfgl::Window::ShouldClose()']]],
+  ['verticies_17',['Verticies',['../de/dc1/namespacesfgl_1_1_verticies.html',1,'sfgl']]],
+  ['window_18',['Window',['../d2/dcf/namespacesfgl_1_1_window.html',1,'sfgl']]]
 ];

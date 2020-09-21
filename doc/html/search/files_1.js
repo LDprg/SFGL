@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['triangel_2ecpp_42',['Triangel.cpp',['../d0/df9/_triangel_8cpp.html',1,'']]],
-  ['triangel_2eh_43',['Triangel.h',['../da/d3e/_triangel_8h.html',1,'']]]
+  ['readme_2emd_36',['README.md',['../d9/dd6/_r_e_a_d_m_e_8md.html',1,'']]]
 ];
