@@ -1,17 +1,8 @@
-#include <iostream>
 #include <vector>
 
-#include <GL/glew.h>
-
-#include <GLFW/glfw3.h>
-
-//#include <glm/glm.hpp>
-
-//#include "loadTexture.h"
-
-#include "window.h"
-#include "Verticies.h"
-#include "Triangel.h"
+#include <SFGL/loadShader.h>
+#include <SFGL/window.h>
+#include <SFGL/Triangel.h>
 
 using namespace sfgl;
 

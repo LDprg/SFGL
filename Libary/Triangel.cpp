@@ -1,4 +1,4 @@
-#include "Triangel.h"
+#include "SFGL/Triangel.h"
 
 namespace sfgl
 {

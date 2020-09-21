@@ -1,4 +1,4 @@
-#include "loadTexture.h"
+#include "SFGL/loadTexture.h"
 
 GLuint loadBMP_custom(const char* imagepath)
 {

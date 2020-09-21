@@ -1,4 +1,4 @@
-#include "window.h"
+#include "SFGL/window.h"
 
 namespace sfgl
 {
