@@ -13,6 +13,8 @@
 #include "Verticies.h"
 #include "Triangel.h"
 
+using namespace sfgl;
+
 std::vector<Triangel> Triangels;
 std::vector<std::shared_ptr<verticies>> Verticies;
 
@@ -43,27 +45,6 @@ int main()
 
 	Triangel2Verticies(Triangels, Verticies);
 
-	/*verticies Vertice;
-
-	Vertice.vertexBufferData.emplace_back(0.0f);
-	Vertice.vertexBufferData.emplace_back(1.0f);
-	Vertice.vertexBufferData.emplace_back(1.0f);
-	Vertice.vertexBufferData.emplace_back(-1.0f);
-	Vertice.vertexBufferData.emplace_back(-1.0f);
-	Vertice.vertexBufferData.emplace_back(-1.0f);
-		  
-	Vertice.colorBufferData.emplace_back(1.f);
-	Vertice.colorBufferData.emplace_back(0.f);
-	Vertice.colorBufferData.emplace_back(0.f);
-	Vertice.colorBufferData.emplace_back(0.f);
-	Vertice.colorBufferData.emplace_back(1.f);
-	Vertice.colorBufferData.emplace_back(0.f);
-	Vertice.colorBufferData.emplace_back(0.f);
-	Vertice.colorBufferData.emplace_back(0.f);
-	Vertice.colorBufferData.emplace_back(1.f);
-	
-	Verticies.emplace_back(std::make_shared<verticies>(Vertice));*/
-
 	VerticiesUpdate(Verticies);
 
 	do
@@ -74,9 +55,9 @@ int main()
 
 		WindowDraw();
 
-		if (glfwGetKey(WindowGetHandle(), GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		if (WindowGetKey(GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		{
-			glfwSetWindowShouldClose(WindowGetHandle(), 1);
+			WindowShouldClose(1);
 		}
 	} while (!WindowShouldClose());
 

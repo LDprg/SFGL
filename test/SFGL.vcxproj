@@ -162,7 +162,7 @@
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="loadShader.hpp" />
+    <ClInclude Include="loadShader.h" />
     <ClInclude Include="loadTexture.h" />
     <ClInclude Include="Triangel.h" />
     <ClInclude Include="Verticies.h" />
