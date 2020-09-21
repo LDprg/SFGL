@@ -7,7 +7,7 @@
 using namespace sfgl;
 
 std::vector<Triangel> Triangels;
-std::vector<std::shared_ptr<Verticies>> Vertex;
+std::vector<std::shared_ptr<Verticies::Verticies>> Vertex;
 
 int main()
 {
@@ -36,13 +36,13 @@ int main()
 
 	Triangel2Verticies(Triangels, Vertex);
 
-	VerticiesUpdate(Vertex);
+	Verticies::Update(Vertex);
 
 	do
 	{
 		Window::ClearScreen();
 
-		VerticiesDraw(Vertex);
+		Verticies::Draw(Vertex);
 
 		Window::Draw();
 
@@ -52,7 +52,7 @@ int main()
 		}
 	} while (!Window::ShouldClose());
 
-	VerticiesClean(Vertex);
+	Verticies::Clean(Vertex);
 
 	Window::Clean();
 

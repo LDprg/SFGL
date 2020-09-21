@@ -9,32 +9,35 @@
 
 namespace sfgl
 {
-		
-	/// struct of the data of Verticies
-	struct Verticies
+	namespace Verticies
 	{
-		/// Vertex Buffer
-		GLuint vertexBuffer;
-		/// Color Buffer
-		GLuint colorBuffer;
 
-		/// Data for Vertex Buffer
-		std::vector <GLfloat> vertexBufferData;
-		/// Data for Color Buffer
-		std::vector <GLfloat> colorBufferData;
-	};
+		/// struct of the data of Verticies
+		struct Verticies
+		{
+			/// Vertex Buffer
+			GLuint vertexBuffer;
+			/// Color Buffer
+			GLuint colorBuffer;
 
-	///	Update the Verticies Buffers with Buffer Data
-	///	@param	Verticies A list of shared pointer of Verticies
-	///	@todo	Remove Buffer Data for more performance
-	void VerticiesUpdate(std::vector<std::shared_ptr<Verticies>> Verticies);
+			/// Data for Vertex Buffer
+			std::vector <GLfloat> vertexBufferData;
+			/// Data for Color Buffer
+			std::vector <GLfloat> colorBufferData;
+		};
 
-	///	Draw the Verticies
-	///	@param	Verticies A list of shared pointer of Verticies
-	void VerticiesDraw(std::vector<std::shared_ptr<Verticies>>& Verticies);
+		///	Update the Verticies Buffers with Buffer Data
+		///	@param	Verticies A list of shared pointer of Verticies
+		///	@todo	Remove Buffer Data for more performance
+		void Update(std::vector<std::shared_ptr<Verticies>> Verticies);
 
-	///	Clean Verticies Data
-	///	@param	Verticies A list of shared pointer of Verticies
-	void VerticiesClean(std::vector<std::shared_ptr<Verticies>>& Verticies);
+		///	Draw the Verticies
+		///	@param	Verticies A list of shared pointer of Verticies
+		void Draw(std::vector<std::shared_ptr<Verticies>>& Verticies);
 
+		///	Clean Verticies Data
+		///	@param	Verticies A list of shared pointer of Verticies
+		void Clean(std::vector<std::shared_ptr<Verticies>>& Verticies);
+
+	}
 }

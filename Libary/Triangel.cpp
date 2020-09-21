@@ -3,13 +3,13 @@
 namespace sfgl
 {
 
-	void Triangel2Verticies(std::vector<Triangel>& Triangels, std::vector<std::shared_ptr<Verticies>>& Vertex)
+	void Triangel2Verticies(std::vector<Triangel>& Triangels, std::vector<std::shared_ptr<Verticies::Verticies>>& Vertex)
 	{
 		for (int i = 0; i < Triangels.size(); i++)
 		{
 			while (Triangels.size() > Vertex.size() - Triangels.size() * i)
 			{
-				Vertex.emplace_back(std::make_shared<Verticies>());
+				Vertex.emplace_back(std::make_shared<Verticies::Verticies>());
 			}
 
 			Vertex[i]->vertexBufferData.clear();

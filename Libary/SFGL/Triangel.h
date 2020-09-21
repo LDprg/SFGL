@@ -24,6 +24,6 @@ namespace sfgl
 	///	Convert Triangel to Verticies
 	///	@param Triangels A list of Triangels
 	///	@param Vertex A list of shared pointer to Verticies
-	void Triangel2Verticies(std::vector<Triangel>& Triangels, std::vector<std::shared_ptr<Verticies>>& Vertex);
+	void Triangel2Verticies(std::vector<Triangel>& Triangels, std::vector<std::shared_ptr<Verticies::Verticies>>& Vertex);
 
 }

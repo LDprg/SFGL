@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['vertexbuffer_65',['vertexBuffer',['../df/dfe/structsfgl_1_1_verticies.html#a9b4cc2971decb96f96a865accd4ce6b0',1,'sfgl::Verticies']]],
-  ['vertexbufferdata_66',['vertexBufferData',['../df/dfe/structsfgl_1_1_verticies.html#adcbe2b0f1d20d5e17af59890255f8428',1,'sfgl::Verticies']]]
+  ['vertexbuffer_63',['vertexBuffer',['../d0/d1d/structsfgl_1_1_verticies_1_1_verticies.html#ad7209bc16c09984b569fc9238cdc8623',1,'sfgl::Verticies::Verticies']]],
+  ['vertexbufferdata_64',['vertexBufferData',['../d0/d1d/structsfgl_1_1_verticies_1_1_verticies.html#a005befd5a3a92f5536f5ab7866ba79a3',1,'sfgl::Verticies::Verticies']]]
 ];
