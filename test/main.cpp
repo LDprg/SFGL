@@ -20,7 +20,7 @@ std::vector<std::shared_ptr<verticies>> Verticies;
 
 int main()
 {
-	WindowCreate();
+	Window::Create();
 	
 	Triangel triangle;
 
@@ -49,21 +49,21 @@ int main()
 
 	do
 	{
-		WindowClearScreen();
+		Window::ClearScreen();
 
 		VerticiesDraw(Verticies);
 
-		WindowDraw();
+		Window::Draw();
 
-		if (WindowGetKey(GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		if (Window::GetKey(GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		{
-			WindowShouldClose(1);
+			Window::ShouldClose(1);
 		}
-	} while (!WindowShouldClose());
+	} while (!Window::ShouldClose());
 
 	VerticiesClean(Verticies);
 
-	WindowClean();
+	Window::Clean();
 
 	return EXIT_SUCCESS;
 }

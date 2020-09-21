@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['todo_20list_9',['Todo List',['../dd/da0/todo.html',1,'']]],
-  ['triangel_10',['Triangel',['../d3/d6b/structsfgl_1_1_triangel.html',1,'sfgl']]],
-  ['triangel_2eh_11',['Triangel.h',['../da/d3e/_triangel_8h.html',1,'']]],
-  ['triangel2verticies_12',['Triangel2Verticies',['../da/d21/namespacesfgl.html#acd805f5ae250e6ae607b6e160227f977',1,'sfgl']]]
+  ['loadbmp_5fcustom_10',['loadBMP_custom',['../db/d1b/load_texture_8h.html#a5705f2db49cf4dc13de9d4718e70f8c7',1,'loadTexture.h']]],
+  ['loadshader_2eh_11',['loadShader.h',['../d2/d14/load_shader_8h.html',1,'']]],
+  ['loadshaders_12',['LoadShaders',['../d2/d14/load_shader_8h.html#a833f10cca6a76fe34ae9efa23ac5e73c',1,'loadShader.h']]],
+  ['loadtexture_2eh_13',['loadTexture.h',['../db/d1b/load_texture_8h.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['triangel2verticies_38',['Triangel2Verticies',['../da/d21/namespacesfgl.html#acd805f5ae250e6ae607b6e160227f977',1,'sfgl']]]
+  ['draw_41',['Draw',['../d2/dcf/namespacesfgl_1_1_window.html#adcd142ed8535bd34e3dc10294d6266cd',1,'sfgl::Window']]]
 ];

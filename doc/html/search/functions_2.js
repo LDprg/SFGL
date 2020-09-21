@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['verticiesclean_39',['VerticiesClean',['../da/d21/namespacesfgl.html#a00ef1cc744e208a45279ed9927342f6f',1,'sfgl']]],
-  ['verticiesdraw_40',['VerticiesDraw',['../da/d21/namespacesfgl.html#aaf3f3310daffcfd9b2fbf9795337486c',1,'sfgl']]],
-  ['verticiesupdate_41',['VerticiesUpdate',['../da/d21/namespacesfgl.html#a2d05ea0e4c0dbddc8bc273f425ae532f',1,'sfgl']]]
+  ['gethandle_42',['GetHandle',['../d2/dcf/namespacesfgl_1_1_window.html#af05aab529e10e52457bd906fc9dccece',1,'sfgl::Window']]],
+  ['getkey_43',['GetKey',['../d2/dcf/namespacesfgl_1_1_window.html#a4680e0a6e1b6517b03c600b2f564d7e8',1,'sfgl::Window']]]
 ];

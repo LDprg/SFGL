@@ -11,50 +11,53 @@
 
 namespace sfgl
 {
+	namespace Window
+	{
 
-	/**
-	*	Creates the Window
-	*/
-	void WindowCreate();
+		/**
+		*	Creates the Window
+		*/
+		void Create();
 
-	/**
-	*	Get the glfw Window Handle.
-	*	@return glfw Window Handle
-	*/
-	GLFWwindow* WindowGetHandle();
+		/**
+		*	Get the glfw Window Handle.
+		*	@return glfw Window Handle
+		*/
+		GLFWwindow* GetHandle();
 
-	/**
-	*	Draw the Window
-	*/
-	void WindowDraw();
+		/**
+		*	Draw the Window
+		*/
+		void Draw();
 
-	/**
-	*	Clear the Window
-	*/
-	void WindowClearScreen();
+		/**
+		*	Clear the Window
+		*/
+		void ClearScreen();
 
-	/**
-	*	Get Key Event
-	*	@param key Key
-	*	@return Event Type
-	*/
-	int WindowGetKey(int key);
+		/**
+		*	Get Key Event
+		*	@param key Key
+		*	@return Event Type
+		*/
+		int GetKey(int key);
 
-	/**
-	*	Close the Window in the next Frame
-	*	@param is Window is closing
-	*/
-	void WindowShouldClose(int state);
+		/**
+		*	Close the Window in the next Frame
+		*	@param is Window is closing
+		*/
+		void ShouldClose(int state);
 
-	/**
-	*	Return if Window should close
-	*	@return 1 if Window is closing
-	*/
-	int WindowShouldClose();
+		/**
+		*	Return if Window should close
+		*	@return 1 if Window is closing
+		*/
+		int ShouldClose();
 
-	/**
-	*	Clean Window Variabeln
-	*/
-	void WindowClean();
+		/**
+		*	Clean Window Variabeln
+		*/
+		void Clean();
 
+	}
 }
