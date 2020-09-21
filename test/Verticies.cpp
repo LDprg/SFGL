@@ -3,7 +3,7 @@
 namespace sfgl
 {
 
-	void VerticiesUpdate(std::vector<std::shared_ptr<verticies>> Verticies)
+	void VerticiesUpdate(std::vector<std::shared_ptr<Verticies>> Verticies)
 	{
 		for (auto i : Verticies)
 		{
@@ -23,7 +23,7 @@ namespace sfgl
 		}
 	}
 
-	void VerticiesDraw(std::vector<std::shared_ptr<verticies>>& Verticies)
+	void VerticiesDraw(std::vector<std::shared_ptr<Verticies>>& Verticies)
 	{
 		for (auto i : Verticies)
 		{
@@ -57,7 +57,7 @@ namespace sfgl
 		}
 	}
 
-	void VerticiesClean(std::vector<std::shared_ptr<verticies>>& Verticies)
+	void VerticiesClean(std::vector<std::shared_ptr<Verticies>>& Verticies)
 	{
 		for (auto i : Verticies)
 		{

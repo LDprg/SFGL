@@ -16,7 +16,7 @@
 using namespace sfgl;
 
 std::vector<Triangel> Triangels;
-std::vector<std::shared_ptr<verticies>> Verticies;
+std::vector<std::shared_ptr<Verticies>> Vertex;
 
 int main()
 {
@@ -43,15 +43,15 @@ int main()
 
 	Triangels.emplace_back(triangle);
 
-	Triangel2Verticies(Triangels, Verticies);
+	Triangel2Verticies(Triangels, Vertex);
 
-	VerticiesUpdate(Verticies);
+	VerticiesUpdate(Vertex);
 
 	do
 	{
 		Window::ClearScreen();
 
-		VerticiesDraw(Verticies);
+		VerticiesDraw(Vertex);
 
 		Window::Draw();
 
@@ -61,7 +61,7 @@ int main()
 		}
 	} while (!Window::ShouldClose());
 
-	VerticiesClean(Verticies);
+	VerticiesClean(Vertex);
 
 	Window::Clean();
 

@@ -10,8 +10,8 @@
 namespace sfgl
 {
 		
-	/// struct of the data of verticies
-	struct verticies
+	/// struct of the data of Verticies
+	struct Verticies
 	{
 		/// Vertex Buffer
 		GLuint vertexBuffer;
@@ -27,14 +27,14 @@ namespace sfgl
 	///	Update the Verticies Buffers with Buffer Data
 	///	@param	Verticies A list of shared pointer of Verticies
 	///	@todo	Remove Buffer Data for more performance
-	void VerticiesUpdate(std::vector<std::shared_ptr<verticies>> Verticies);
+	void VerticiesUpdate(std::vector<std::shared_ptr<Verticies>> Verticies);
 
 	///	Draw the Verticies
 	///	@param	Verticies A list of shared pointer of Verticies
-	void VerticiesDraw(std::vector<std::shared_ptr<verticies>>& Verticies);
+	void VerticiesDraw(std::vector<std::shared_ptr<Verticies>>& Verticies);
 
 	///	Clean Verticies Data
 	///	@param	Verticies A list of shared pointer of Verticies
-	void VerticiesClean(std::vector<std::shared_ptr<verticies>>& Verticies);
+	void VerticiesClean(std::vector<std::shared_ptr<Verticies>>& Verticies);
 
 }
