@@ -26,6 +26,11 @@ namespace sfgl
 			std::shared_ptr<Verticies::Verticies> Vertex;
 		};
 
+		/// Swap two Triangels
+		/// @param	T1 First Triangel
+		/// @param	T2 Second Triangel
+		void Swap(Triangel& T1, Triangel& T2);
+
 		///	Create Vertex of Triangel 
 		///	@param Triangels A list of Triangels
 		void Create(std::vector<Triangel>& Triangels);

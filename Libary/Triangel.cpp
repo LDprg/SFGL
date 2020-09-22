@@ -4,6 +4,11 @@ namespace sfgl
 {
 	namespace Triangel
 	{
+		void Swap(Triangel& T1, Triangel& T2)
+		{
+			std::swap(T1, T2);
+		}
+
 		void Create(std::vector<Triangel>& Triangels)
 		{
 			for (int i = 0; i < Triangels.size(); i++)

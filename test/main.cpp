@@ -33,6 +33,27 @@ int main()
 
 	Triangels.emplace_back(triangle);
 
+	triangle.EdgePos[0][0] = 1.f;
+	triangle.EdgePos[0][1] = 0.f;
+	triangle.EdgePos[1][0] = 1.f;
+	triangle.EdgePos[1][1] = -1.f;
+	triangle.EdgePos[2][0] = -0.f;
+	triangle.EdgePos[2][1] = -1.f;
+
+	triangle.EdgeColor[0][0] = 1.f;
+	triangle.EdgeColor[0][1] = 0.f;
+	triangle.EdgeColor[0][2] = 0.f;
+	triangle.EdgeColor[1][0] = 0.f;
+	triangle.EdgeColor[1][1] = 1.f;
+	triangle.EdgeColor[1][2] = 0.f;
+	triangle.EdgeColor[2][0] = 0.f;
+	triangle.EdgeColor[2][1] = 0.f;
+	triangle.EdgeColor[2][2] = 1.f;
+
+	Triangels.emplace_back(triangle);
+
+	Triangel::Swap(Triangels[0], Triangels[1]);
+
 	Triangel::Create(Triangels);
 
 	Triangel::Update(Triangels);
