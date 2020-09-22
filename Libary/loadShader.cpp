@@ -21,7 +21,7 @@ namespace sfgl
 			}
 			else
 			{
-				printf("Impossible to open %s. Are you in the right directory ? Don't forget to read the FAQ !\n", vertex_file_path);
+				std::cout <<"Impossible to open " << vertex_file_path << std::endl;
 				getchar();
 				return 0;
 			}
@@ -34,12 +34,18 @@ namespace sfgl
 				FragmentShaderCode.assign(std::istreambuf_iterator<char>(FragmentShaderStream), std::istreambuf_iterator<char>());
 				FragmentShaderStream.close();
 			}
+			else
+			{
+				std::cout << "Impossible to open " << fragment_file_path << std::endl;
+				getchar();
+				return 0;
+			}
 
 			GLint Result = GL_FALSE;
 			int InfoLogLength;
 
 			// Compile Vertex Shader
-			printf("Compiling shader : %s\n", vertex_file_path);
+			std::cout << "Compiling shader : " << vertex_file_path << std::endl;
 			char const* VertexSourcePointer = VertexShaderCode.c_str();
 			glShaderSource(VertexShaderID, 1, &VertexSourcePointer, NULL);
 			glCompileShader(VertexShaderID);
@@ -51,11 +57,11 @@ namespace sfgl
 			{
 				std::vector<char> VertexShaderErrorMessage((unsigned __int64)InfoLogLength + 1);
 				glGetShaderInfoLog(VertexShaderID, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
-				printf("%s\n", &VertexShaderErrorMessage[0]);
+				std::cout << &VertexShaderErrorMessage[0] << std::endl;
 			}
 
 			// Compile Fragment Shader
-			printf("Compiling shader : %s\n", fragment_file_path);
+			std::cout << "Compiling shader : " << fragment_file_path << std::endl;
 			char const* FragmentSourcePointer = FragmentShaderCode.c_str();
 			glShaderSource(FragmentShaderID, 1, &FragmentSourcePointer, NULL);
 			glCompileShader(FragmentShaderID);
@@ -67,11 +73,11 @@ namespace sfgl
 			{
 				std::vector<char> FragmentShaderErrorMessage((unsigned __int64)InfoLogLength + 1);
 				glGetShaderInfoLog(FragmentShaderID, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
-				printf("%s\n", &FragmentShaderErrorMessage[0]);
+				std::cout << &FragmentShaderErrorMessage[0] << std::endl;
 			}
 
 			// Link the program
-			printf("Linking program\n");
+			std::cout <<"Linking program" << std::endl;
 			GLuint ProgramID = glCreateProgram();
 			glAttachShader(ProgramID, VertexShaderID);
 			glAttachShader(ProgramID, FragmentShaderID);
@@ -84,7 +90,7 @@ namespace sfgl
 			{
 				std::vector<char> ProgramErrorMessage((unsigned __int64)InfoLogLength + 1);
 				glGetProgramInfoLog(ProgramID, InfoLogLength, NULL, &ProgramErrorMessage[0]);
-				printf("%s\n", &ProgramErrorMessage[0]);
+				std::cout << &ProgramErrorMessage[0] << std::endl;
 			}
 
 			glDetachShader(ProgramID, VertexShaderID);
@@ -102,7 +108,7 @@ namespace sfgl
 			GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 			GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
 
-			const char VertexShaderCode[] = 
+			const char *VertexShaderCode = 
 				"#version 330 core\n"
 				"layout(location = 0) in vec2 vertexPosition;"
 				"layout(location = 1) in vec3 vertexColor;"
@@ -116,7 +122,7 @@ namespace sfgl
 				"}";
 
 			// Read the Fragment Shader code from the file
-			const char FragmentShaderCode[] = 
+			const char *FragmentShaderCode = 
 				"#version 330 core\n"
 				"in vec3 fragColor;"
 				"out vec3 color;"
@@ -129,9 +135,8 @@ namespace sfgl
 			int InfoLogLength;
 
 			// Compile Vertex Shader
-			printf("Compiling Vertex Shader");
-			char const* VertexSourcePointer = VertexShaderCode;
-			glShaderSource(VertexShaderID, 1, &VertexSourcePointer, NULL);
+			std::cout << "Compiling Vertex Shader" << std::endl;
+			glShaderSource(VertexShaderID, 1, &VertexShaderCode, NULL);
 			glCompileShader(VertexShaderID);
 
 			// Check Vertex Shader
@@ -141,13 +146,12 @@ namespace sfgl
 			{
 				std::vector<char> VertexShaderErrorMessage((unsigned __int64)InfoLogLength + 1);
 				glGetShaderInfoLog(VertexShaderID, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
-				printf("%s\n", &VertexShaderErrorMessage[0]);
+				std::cout << &VertexShaderErrorMessage[0] << std::endl;
 			}
 
 			// Compile Fragment Shader
-			printf("Compiling Fragment Shader");
-			char const* FragmentSourcePointer = FragmentShaderCode;
-			glShaderSource(FragmentShaderID, 1, &FragmentSourcePointer, NULL);
+			std::cout << "Compiling Fragment Shader" << std::endl;
+			glShaderSource(FragmentShaderID, 1, &FragmentShaderCode, NULL);
 			glCompileShader(FragmentShaderID);
 
 			// Check Fragment Shader
@@ -157,11 +161,11 @@ namespace sfgl
 			{
 				std::vector<char> FragmentShaderErrorMessage((unsigned __int64)InfoLogLength + 1);
 				glGetShaderInfoLog(FragmentShaderID, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
-				printf("%s\n", &FragmentShaderErrorMessage[0]);
+				std::cout << &FragmentShaderErrorMessage[0] << std::endl;
 			}
 
 			// Link the program
-			printf("Linking program\n");
+			std::cout << "Linking program" << std::endl;
 			GLuint ProgramID = glCreateProgram();
 			glAttachShader(ProgramID, VertexShaderID);
 			glAttachShader(ProgramID, FragmentShaderID);
@@ -174,7 +178,7 @@ namespace sfgl
 			{
 				std::vector<char> ProgramErrorMessage((unsigned __int64)InfoLogLength + 1);
 				glGetProgramInfoLog(ProgramID, InfoLogLength, NULL, &ProgramErrorMessage[0]);
-				printf("%s\n", &ProgramErrorMessage[0]);
+				std::cout << &ProgramErrorMessage[0] << std::endl;
 			}
 
 			glDetachShader(ProgramID, VertexShaderID);
