@@ -17,3 +17,7 @@ Offical supported is only Windows x64 with OpenGL 3.3 support, but theoretical i
 ## Learn
 
 You can learn SFGL by reading the documentation (Wiki will follow soon).
+
+## Contributing
+
+Please read the CONTRIBUTING.md File.
