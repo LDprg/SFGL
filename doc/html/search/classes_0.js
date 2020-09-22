@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['triangel_31',['Triangel',['../da/d29/structsfgl_1_1_triangel_1_1_triangel.html',1,'sfgl::Triangel']]]
+  ['rectangel_34',['Rectangel',['../d8/d3f/structsfgl_1_1_rectangel_1_1_rectangel.html',1,'sfgl::Rectangel']]]
 ];

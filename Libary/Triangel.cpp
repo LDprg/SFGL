@@ -65,7 +65,7 @@ namespace sfgl
 
 		void Draw(Triangel& Triangels)
 		{
-			Verticies::Draw(Triangels.Vertex);
+			Verticies::Draw(Triangels.Vertex, GL_TRIANGLES);
 		}
 
 		void Clean(std::vector<Triangel>& Triangels)

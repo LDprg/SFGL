@@ -30,15 +30,15 @@ namespace sfgl
 			glBufferData(GL_ARRAY_BUFFER, sizeof(float) * Verticies->colorBufferData.size(), Verticies->colorBufferData.data(), GL_STATIC_DRAW);
 		}
 
-		void Draw(std::vector<std::shared_ptr<Verticies>> Verticies)
+		void Draw(std::vector<std::shared_ptr<Verticies>> Verticies, GLenum mode)
 		{
 			for (int i = 0; i < Verticies.size(); i++)
 			{
-				Draw(Verticies[i]);
+				Draw(Verticies[i], mode);
 			}
 		}
 
-		void Draw(std::shared_ptr<Verticies> Verticies)
+		void Draw(std::shared_ptr<Verticies> Verticies, GLenum mode)
 		{
 			// 1st attribute buffer : vertices
 			glEnableVertexAttribArray(0);
@@ -65,7 +65,7 @@ namespace sfgl
 			);
 
 			// Draw the triangle !
-			glDrawArrays(GL_TRIANGLES, 0, (GLsizei)Verticies->vertexBufferData.size() / 2); // Starting from vertex 0; 3 vertices total -> 1 triangle
+			glDrawArrays(/*GL_TRIANGLE_STRIP*/mode, 0, (GLsizei)Verticies->vertexBufferData.size() / 2); // Starting from vertex 0; 3 vertices total -> 1 triangle
 			glDisableVertexAttribArray(0);
 		}
 

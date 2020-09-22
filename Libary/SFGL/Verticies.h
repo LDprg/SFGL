@@ -36,11 +36,11 @@ namespace sfgl
 
 		///	Draw the Verticies
 		///	@param	Verticies A list of shared pointer of Verticies
-		void Draw(std::vector<std::shared_ptr<Verticies>> Verticies);
+		void Draw(std::vector<std::shared_ptr<Verticies>> Verticies, GLenum mode);
 
 		///	Draw the Verticies
 		///	@param	Verticies shared pointer of Verticies
-		void Draw(std::shared_ptr<Verticies> Verticies);
+		void Draw(std::shared_ptr<Verticies> Verticies, GLenum mode);
 
 		///	Clean Verticies Data
 		///	@param	Verticies A list of shared pointer of Verticies

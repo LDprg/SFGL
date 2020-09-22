@@ -20,12 +20,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="loadShader.cpp" />
+    <ClCompile Include="Rectangel.cpp" />
     <ClCompile Include="Triangel.cpp" />
     <ClCompile Include="Verticies.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SFGL\loadShader.h" />
+    <ClInclude Include="SFGL\Rectangel.h" />
     <ClInclude Include="SFGL\Triangel.h" />
     <ClInclude Include="SFGL\Verticies.h" />
     <ClInclude Include="SFGL\window.h" />

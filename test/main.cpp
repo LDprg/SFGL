@@ -3,66 +3,38 @@
 #include <SFGL/loadShader.h>
 #include <SFGL/window.h>
 #include <SFGL/Triangel.h>
+#include <SFGL/Rectangel.h>
 
 using namespace sfgl;
 
-std::vector<Triangel::Triangel> Triangels;
+std::vector<Rectangel::Rectangel> Rectangels;
 
 int main()
 {
 	Window::Create();
 	
-	Triangel::Triangel triangle;
+	Rectangel::Rectangel rectangel;
 
-	triangle.EdgePos[0][0] = 0.f;
-	triangle.EdgePos[0][1] = 1.f;
-	triangle.EdgePos[1][0] = 1.f;
-	triangle.EdgePos[1][1] = -1.f;
-	triangle.EdgePos[2][0] = -1.f;
-	triangle.EdgePos[2][1] = -1.f;
+	rectangel.EdgePos[0][0] = 1.f;
+	rectangel.EdgePos[0][1] = 1.f;
+	rectangel.EdgePos[1][0] = 0.f;
+	rectangel.EdgePos[1][1] = 0.f;
 
-	triangle.EdgeColor[0][0] = 1.f;
-	triangle.EdgeColor[0][1] = 0.f;
-	triangle.EdgeColor[0][2] = 0.f;
-	triangle.EdgeColor[1][0] = 0.f;
-	triangle.EdgeColor[1][1] = 1.f;
-	triangle.EdgeColor[1][2] = 0.f;
-	triangle.EdgeColor[2][0] = 0.f;
-	triangle.EdgeColor[2][1] = 0.f;
-	triangle.EdgeColor[2][2] = 1.f;
+	rectangel.EdgeColor[0] = 1.f;
+	rectangel.EdgeColor[1] = 1.f;
+	rectangel.EdgeColor[2] = 0.f;
 
-	Triangels.emplace_back(triangle);
+	Rectangels.emplace_back(rectangel);
 
-	triangle.EdgePos[0][0] = 1.f;
-	triangle.EdgePos[0][1] = 0.f;
-	triangle.EdgePos[1][0] = 1.f;
-	triangle.EdgePos[1][1] = -1.f;
-	triangle.EdgePos[2][0] = -0.f;
-	triangle.EdgePos[2][1] = -1.f;
+	Rectangel::Create(Rectangels);
 
-	triangle.EdgeColor[0][0] = 1.f;
-	triangle.EdgeColor[0][1] = 0.f;
-	triangle.EdgeColor[0][2] = 0.f;
-	triangle.EdgeColor[1][0] = 0.f;
-	triangle.EdgeColor[1][1] = 1.f;
-	triangle.EdgeColor[1][2] = 0.f;
-	triangle.EdgeColor[2][0] = 0.f;
-	triangle.EdgeColor[2][1] = 0.f;
-	triangle.EdgeColor[2][2] = 1.f;
-
-	Triangels.emplace_back(triangle);
-
-	Triangel::Swap(Triangels[0], Triangels[1]);
-
-	Triangel::Create(Triangels);
-
-	Triangel::Update(Triangels);
+	Rectangel::Update(Rectangels);
 
 	do
 	{
 		Window::ClearScreen();
 
-		Triangel::Draw(Triangels);
+		Rectangel::Draw(Rectangels);
 
 		Window::Draw();
 
@@ -72,7 +44,7 @@ int main()
 		}
 	} while (!Window::ShouldClose());
 
-	Triangel::Clean(Triangels);
+	Rectangel::Clean(Rectangels);
 
 	Window::Clean();
 
