@@ -28,16 +28,27 @@ namespace sfgl
 
 		///	Update the Verticies Buffers with Buffer Data
 		///	@param	Verticies A list of shared pointer of Verticies
-		///	@todo	Remove Buffer Data for more performance
 		void Update(std::vector<std::shared_ptr<Verticies>> Verticies);
+
+		///	Update the Verticies Buffers with Buffer Data
+		///	@param	Verticies shared pointer of Verticies
+		void Update(std::shared_ptr<Verticies> Verticies);
 
 		///	Draw the Verticies
 		///	@param	Verticies A list of shared pointer of Verticies
-		void Draw(std::vector<std::shared_ptr<Verticies>>& Verticies);
+		void Draw(std::vector<std::shared_ptr<Verticies>> Verticies);
+
+		///	Draw the Verticies
+		///	@param	Verticies shared pointer of Verticies
+		void Draw(std::shared_ptr<Verticies> Verticies);
 
 		///	Clean Verticies Data
 		///	@param	Verticies A list of shared pointer of Verticies
-		void Clean(std::vector<std::shared_ptr<Verticies>>& Verticies);
+		void Clean(std::vector<std::shared_ptr<Verticies>> Verticies);
+
+		///	Clean Verticies Data
+		///	@param	Verticies shared pointer of Verticies
+		void Clean(std::shared_ptr<Verticies> Verticies);
 
 	}
 }

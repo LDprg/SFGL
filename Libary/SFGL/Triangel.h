@@ -10,20 +10,52 @@
 
 namespace sfgl
 {
-
-	///	Struct of the data of a Triangel
-	struct Triangel
+	namespace Triangel
 	{
-		///	Postion of Triangel Edge		
-		float EdgePos[3][2];
 
-		///	Color of Triangel Edge
-		float EdgeColor[3][3];
-	};
+		///	Struct of the data of a Triangel
+		struct Triangel
+		{
+			///	Postion of Triangel Edge		
+			float EdgePos[3][2];
 
-	///	Convert Triangel to Verticies
-	///	@param Triangels A list of Triangels
-	///	@param Vertex A list of shared pointer to Verticies
-	void Triangel2Verticies(std::vector<Triangel>& Triangels, std::vector<std::shared_ptr<Verticies::Verticies>>& Vertex);
+			///	Color of Triangel Edge
+			float EdgeColor[3][3];
 
+			///	Vertex 
+			std::shared_ptr<Verticies::Verticies> Vertex;
+		};
+
+		///	Create Vertex of Triangel 
+		///	@param Triangels A list of Triangels
+		void Create(std::vector<Triangel>& Triangels);
+
+		///	Create Vertex of Triangel 
+		///	@param Triangels A Triangel
+		void Create(Triangel& Triangels);
+
+		///	Update Vertex of Triangel 
+		///	@param Triangels A list of Triangels
+		void Update(std::vector<Triangel>& Triangels);
+
+		///	Update Vertex of Triangel 
+		///	@param Triangels A Triangel
+		void Update(Triangel& Triangels);
+
+		///	Draw Vertex of Triangel 
+		///	@param Triangels A list of Triangels
+		void Draw(std::vector<Triangel>& Triangels);
+
+		///	Draw Vertex of Triangel 
+		///	@param Triangels A Triangel
+		void Draw(Triangel& Triangels);
+
+		///	Clean Vertex of Triangel 
+		///	@param Triangels A list of Triangels
+		void Clean(std::vector<Triangel>& Triangels);
+
+		///	Clean Vertex of Triangel 
+		///	@param Triangels A Triangel
+		void Clean(Triangel& Triangels);
+	}
 }

@@ -4,9 +4,9 @@ var indexSectionsWithContent =
   1: "tv",
   2: "s",
   3: "lrtvw",
-  4: "cdglstu",
+  4: "cdglsu",
   5: "cev",
-  6: "st"
+  6: "s"
 };
 
 var indexSectionNames =

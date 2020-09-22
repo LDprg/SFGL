@@ -2,33 +2,79 @@
 
 namespace sfgl
 {
-
-	void Triangel2Verticies(std::vector<Triangel>& Triangels, std::vector<std::shared_ptr<Verticies::Verticies>>& Vertex)
+	namespace Triangel
 	{
-		for (int i = 0; i < Triangels.size(); i++)
+		void Create(std::vector<Triangel>& Triangels)
 		{
-			while (Triangels.size() > Vertex.size() - Triangels.size() * i)
+			for (int i = 0; i < Triangels.size(); i++)
 			{
-				Vertex.emplace_back(std::make_shared<Verticies::Verticies>());
-			}
-
-			Vertex[i]->vertexBufferData.clear();
-
-			for (int j = 0; j < 3; j++)
-			{
-				Vertex[i]->vertexBufferData.emplace_back(Triangels[i].EdgePos[j][0]);
-				Vertex[i]->vertexBufferData.emplace_back(Triangels[i].EdgePos[j][1]);
-			}
-
-			Vertex[i]->colorBufferData.clear();
-
-			for (int j = 0; j < 3; j++)
-			{
-				Vertex[i]->colorBufferData.emplace_back(Triangels[i].EdgeColor[j][0]);
-				Vertex[i]->colorBufferData.emplace_back(Triangels[i].EdgeColor[j][1]);
-				Vertex[i]->colorBufferData.emplace_back(Triangels[i].EdgeColor[j][2]);
+				Create(Triangels[i]);
 			}
 		}
-	}
 
+		void Create(Triangel& Triangels)
+		{
+			Triangels.Vertex = std::shared_ptr<Verticies::Verticies>(new Verticies::Verticies);
+
+			Triangels.Vertex->vertexBufferData.reserve(6);
+			Triangels.Vertex->colorBufferData.reserve(9);
+		}
+
+		void Update(std::vector<Triangel>& Triangels)
+		{
+			for (int i = 0; i < Triangels.size();i++)
+			{
+				Update(Triangels[i]);
+			}
+		}
+
+		void Update(Triangel& Triangels)
+		{
+			Triangels.Vertex->vertexBufferData.clear();
+
+			for (int j = 0; j < 3; j++)
+			{
+				Triangels.Vertex->vertexBufferData.emplace_back(Triangels.EdgePos[j][0]);
+				Triangels.Vertex->vertexBufferData.emplace_back(Triangels.EdgePos[j][1]);
+			}
+
+			Triangels.Vertex->colorBufferData.clear();
+
+			for (int j = 0; j < 3; j++)
+			{
+				Triangels.Vertex->colorBufferData.emplace_back(Triangels.EdgeColor[j][0]);
+				Triangels.Vertex->colorBufferData.emplace_back(Triangels.EdgeColor[j][1]);
+				Triangels.Vertex->colorBufferData.emplace_back(Triangels.EdgeColor[j][2]);
+			}
+			
+			Verticies::Update(Triangels.Vertex);
+		}
+
+		void Draw(std::vector<Triangel>& Triangels)
+		{
+			for (int i = 0; i < Triangels.size(); i++)
+			{
+				Draw(Triangels[i]);
+			}
+		}
+
+		void Draw(Triangel& Triangels)
+		{
+			Verticies::Draw(Triangels.Vertex);
+		}
+
+		void Clean(std::vector<Triangel>& Triangels)
+		{
+			for (int i = 0; i < Triangels.size(); i++)
+			{
+				Clean(Triangels[i]);
+			}
+		}
+
+		void Clean(Triangel& Triangels)
+		{
+			Verticies::Clean(Triangels.Vertex);
+		}
+
+	}
 }

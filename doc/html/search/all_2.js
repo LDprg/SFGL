@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['edgecolor_6',['EdgeColor',['../d3/d6b/structsfgl_1_1_triangel.html#aedb346ef85f449f55d720baa84881726',1,'sfgl::Triangel']]],
-  ['edgepos_7',['EdgePos',['../d3/d6b/structsfgl_1_1_triangel.html#a1beef7b3498026c82b2dcbf379f10404',1,'sfgl::Triangel']]]
+  ['edgecolor_6',['EdgeColor',['../da/d29/structsfgl_1_1_triangel_1_1_triangel.html#ac0c47a494a94365d98d4db609480236c',1,'sfgl::Triangel::Triangel']]],
+  ['edgepos_7',['EdgePos',['../da/d29/structsfgl_1_1_triangel_1_1_triangel.html#a7ba678eb7601ff90b93a9868dbbb067e',1,'sfgl::Triangel::Triangel']]]
 ];
