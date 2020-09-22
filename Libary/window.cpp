@@ -52,7 +52,8 @@ namespace sfgl
 			glBindVertexArray(w_VertexArrayID);
 
 			// Create and compile our GLSL program from the shaders
-			w_programID = LoadShaders("shader.vert", "shader.frag");
+			//w_programID = Shader::loadFromFile("shader.vert", "shader.frag");
+			w_programID = Shader::loadStd();
 		}
 
 		GLFWwindow* GetHandle()

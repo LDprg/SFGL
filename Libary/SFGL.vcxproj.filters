@@ -18,9 +18,6 @@
     <ClCompile Include="loadShader.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="loadTexture.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="Triangel.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
@@ -35,9 +32,6 @@
     <ClInclude Include="SFGL\loadShader.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
-    <ClInclude Include="SFGL\loadTexture.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
     <ClInclude Include="SFGL\Triangel.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
@@ -47,5 +41,13 @@
     <ClInclude Include="SFGL\window.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\shader.frag">
+      <Filter>Ressourcendateien</Filter>
+    </None>
+    <None Include="Shader\shader.vert">
+      <Filter>Ressourcendateien</Filter>
+    </None>
   </ItemGroup>
 </Project>

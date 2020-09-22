@@ -20,17 +20,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="loadShader.cpp" />
-    <ClCompile Include="loadTexture.cpp" />
     <ClCompile Include="Triangel.cpp" />
     <ClCompile Include="Verticies.cpp" />
     <ClCompile Include="window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SFGL\loadShader.h" />
-    <ClInclude Include="SFGL\loadTexture.h" />
     <ClInclude Include="SFGL\Triangel.h" />
     <ClInclude Include="SFGL\Verticies.h" />
     <ClInclude Include="SFGL\window.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shader\shader.frag" />
+    <None Include="Shader\shader.vert" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
