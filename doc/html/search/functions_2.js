@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['gethandle_53',['GetHandle',['../d2/dcf/namespacesfgl_1_1_window.html#af05aab529e10e52457bd906fc9dccece',1,'sfgl::Window']]],
-  ['getkey_54',['GetKey',['../d2/dcf/namespacesfgl_1_1_window.html#a4680e0a6e1b6517b03c600b2f564d7e8',1,'sfgl::Window']]]
+  ['getkey_56',['GetKey',['../d2/dcf/namespacesfgl_1_1_window.html#acf4146935927c096b342bb93af026853',1,'sfgl::Window']]]
 ];

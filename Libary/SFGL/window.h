@@ -13,35 +13,46 @@ namespace sfgl
 {
 	namespace Window
 	{
+		///	Struct of the data of a Rectangel
+		struct Window
+		{
+			/// Window Handle
+			GLFWwindow* window;
+
+			/// Vertex Array ID
+			GLuint VertexArrayID;
+
+			/// Shader Program ID
+			GLuint programID;
+		};
 
 		///	Creates the Window
-		void Create();
-
-		///	Get the glfw Window Handle.
-		///	@return glfw Window Handle
-		GLFWwindow* GetHandle();
+		void Create(Window &window);
 
 		/// Draw the Window
-		void Draw();
+		void Draw(Window& window);
 
 		///	Clear the Window
-		void ClearScreen();
+		void ClearScreen(Window& window);
 
 		///	Get Key Event
 		///	@param key Key
 		///	@return Event Type
-		int GetKey(int key);
+		int GetKey(Window& window, int key);
 
 		///	Close the Window in the next Frame
 		///	@param state should Window close
-		void ShouldClose(int state);
+		void ShouldClose(Window& window, int state);
 
 		///	Return if Window should close
 		///	@return is Window closing
-		int ShouldClose();
+		inline int ShouldClose(Window& window)
+		{
+			return	glfwWindowShouldClose(window.window);
+		}
 
 		///	Clean Window Variabeln
-		void Clean();
+		void Clean(Window& window);
 
 	}
 }

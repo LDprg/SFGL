@@ -9,9 +9,11 @@ using namespace sfgl;
 
 std::vector<Rectangel::Rectangel> Rectangels;
 
+Window::Window window;
+
 int main()
 {
-	Window::Create();
+	Window::Create(window);
 	
 	Rectangel::Rectangel rectangel;
 
@@ -20,7 +22,7 @@ int main()
 	rectangel.EdgePos[1][0] = 0.f;
 	rectangel.EdgePos[1][1] = 0.f;
 
-	rectangel.EdgeColor[0] = 1.f;
+	rectangel.EdgeColor[0] = 0.f;
 	rectangel.EdgeColor[1] = 1.f;
 	rectangel.EdgeColor[2] = 0.f;
 
@@ -32,21 +34,21 @@ int main()
 
 	do
 	{
-		Window::ClearScreen();
+		Window::ClearScreen(window);
 
 		Rectangel::Draw(Rectangels);
 
-		Window::Draw();
+		Window::Draw(window);
 
-		if (Window::GetKey(GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		if (Window::GetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		{
-			Window::ShouldClose(1);
+			Window::ShouldClose(window, 1);
 		}
-	} while (!Window::ShouldClose());
+	} while (!Window::ShouldClose(window));
 
 	Rectangel::Clean(Rectangels);
 
-	Window::Clean();
+	Window::Clean(window);
 
 	return EXIT_SUCCESS;
 }

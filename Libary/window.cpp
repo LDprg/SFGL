@@ -5,11 +5,7 @@ namespace sfgl
 	namespace Window
 	{
 
-		static GLFWwindow* w_window;
-		static GLuint w_VertexArrayID;
-		static GLuint w_programID;
-
-		void Create()
+		void Create(Window& window)
 		{
 			// Init GLFW
 			if (!glfwInit())
@@ -24,15 +20,15 @@ namespace sfgl
 			glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);	// No old OpenGL
 
 			// Create Window
-			w_window = glfwCreateWindow(1024, 768, "SFGL", nullptr, nullptr);
-			if (!w_window)
+			window.window = glfwCreateWindow(1024, 768, "SFGL", nullptr, nullptr);
+			if (!window.window)
 			{
 				glfwTerminate();
 				throw std::runtime_error("Failed to create Window!");
 			}
 
 			// Create OpenGL context
-			glfwMakeContextCurrent(w_window);
+			glfwMakeContextCurrent(window.window);
 
 			//Init glew
 			if (glewInit() != GLEW_OK)
@@ -41,37 +37,32 @@ namespace sfgl
 			}
 
 			// Ensure we can capture the escape key being pressed below
-			glfwSetInputMode(w_window, GLFW_STICKY_KEYS, GL_TRUE);
+			glfwSetInputMode(window.window, GLFW_STICKY_KEYS, GL_TRUE);
 
 			// Enable depth test
 			glEnable(GL_DEPTH_TEST);
 			// Accept fragment if it closer to the camera than the former one
 			glDepthFunc(GL_LESS);
 
-			glGenVertexArrays(1, &w_VertexArrayID);
-			glBindVertexArray(w_VertexArrayID);
+			glGenVertexArrays(1, &window.VertexArrayID);
+			glBindVertexArray(window.VertexArrayID);
 
 			// Create and compile our GLSL program from the shaders
 			//w_programID = Shader::loadFromFile("shader.vert", "shader.frag");
-			w_programID = Shader::loadStd();
+			window.programID = Shader::loadStd();
 		}
 
-		GLFWwindow* GetHandle()
-		{
-			return w_window;
-		}
-
-		void Draw()
+		void Draw(Window& window)
 		{
 			// Swap buffer
-			glfwSwapBuffers(w_window);
+			glfwSwapBuffers(window.window);
 			glfwPollEvents();
 
 			// Use shader
-			glUseProgram(w_programID);
+			glUseProgram(window.programID);
 		}
 
-		void ClearScreen()
+		void ClearScreen(Window& window)
 		{
 			// Dark blue background
 			glClearColor(0.f, 0.f, 0.4f, 0.f);
@@ -79,28 +70,23 @@ namespace sfgl
 			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 		}
 
-		int GetKey(int key)
+		int GetKey(Window& window, int key)
 		{
-			return glfwGetKey(w_window, key);
+			return glfwGetKey(window.window, key);
 		}
 
-		void ShouldClose(int state)
+		void ShouldClose(Window& window, int state)
 		{
-			glfwSetWindowShouldClose(w_window, state);
+			glfwSetWindowShouldClose(window.window, state);
 		}
 
-		int ShouldClose()
+		void Clean(Window& window)
 		{
-			return	glfwWindowShouldClose(w_window);
-		}
-
-		void Clean()
-		{
-			glDeleteVertexArrays(1, &w_VertexArrayID);
-			glDeleteProgram(w_programID);
+			glDeleteVertexArrays(1, &window.VertexArrayID);
+			glDeleteProgram(window.programID);
 
 			// Close OpenGL Window and terminate GLFW
-			glfwDestroyWindow(w_window);
+			glfwDestroyWindow(window.window);
 			glfwTerminate();
 		}
 
