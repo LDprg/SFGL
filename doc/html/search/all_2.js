@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['edgecolor_6',['EdgeColor',['../d8/d3f/structsfgl_1_1_rectangel_1_1_rectangel.html#af0b866928eab525e797dc237cdc0be44',1,'sfgl::Rectangel::Rectangel::EdgeColor()'],['../da/d29/structsfgl_1_1_triangel_1_1_triangel.html#ac0c47a494a94365d98d4db609480236c',1,'sfgl::Triangel::Triangel::EdgeColor()']]],
-  ['edgepos_7',['EdgePos',['../d8/d3f/structsfgl_1_1_rectangel_1_1_rectangel.html#adde87c17e323f05e17c698e36e7bce8a',1,'sfgl::Rectangel::Rectangel::EdgePos()'],['../da/d29/structsfgl_1_1_triangel_1_1_triangel.html#a7ba678eb7601ff90b93a9868dbbb067e',1,'sfgl::Triangel::Triangel::EdgePos()']]]
+  ['edgecolor_6',['EdgeColor',['../d9/d31/structsfgl_1_1_rectangel_data.html#a255fde53696e0d3069da8083a155f1b1',1,'sfgl::RectangelData::EdgeColor()'],['../df/db1/structsfgl_1_1_triangel_data.html#aa046b3436e7be21807159a816da7eece',1,'sfgl::TriangelData::EdgeColor()']]],
+  ['edgepos_7',['EdgePos',['../d9/d31/structsfgl_1_1_rectangel_data.html#a00a9033d59107c3efd405335eaa6165f',1,'sfgl::RectangelData::EdgePos()'],['../df/db1/structsfgl_1_1_triangel_data.html#acd98d1ef45480d19b712dd78746ae244',1,'sfgl::TriangelData::EdgePos()']]]
 ];

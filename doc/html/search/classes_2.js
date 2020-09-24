@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['verticies_38',['Verticies',['../d0/d1d/structsfgl_1_1_verticies_1_1_verticies.html',1,'sfgl::Verticies']]]
+  ['verticiesdata_39',['VerticiesData',['../d9/d69/structsfgl_1_1_verticies_data.html',1,'sfgl']]]
 ];

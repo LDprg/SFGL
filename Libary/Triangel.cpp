@@ -1,11 +1,11 @@
 #include "SFGL/Triangel.h"
 
-void sfgl::Triangel::Swap(Triangel& T1, Triangel& T2)
+void sfgl::Triangel::Swap(TriangelData& T1, TriangelData& T2)
 {
 	std::swap(T1, T2);
 }
 
-void  sfgl::Triangel::Create(std::vector<Triangel>& Triangels)
+void  sfgl::Triangel::Create(std::vector<TriangelData>& Triangels)
 {
 	for (int i = 0; i < Triangels.size(); i++)
 	{
@@ -13,15 +13,15 @@ void  sfgl::Triangel::Create(std::vector<Triangel>& Triangels)
 	}
 }
 
-void  sfgl::Triangel::Create(Triangel& Triangels)
+void  sfgl::Triangel::Create(TriangelData& Triangels)
 {
-	Triangels.Vertex = std::shared_ptr<Verticies::Verticies>(new Verticies::Verticies);
+	Triangels.Vertex = std::shared_ptr<VerticiesData>(new VerticiesData);
 
 	Triangels.Vertex->vertexBufferData.reserve(6);
 	Triangels.Vertex->colorBufferData.reserve(9);
 }
 
-void  sfgl::Triangel::Update(std::vector<Triangel>& Triangels)
+void  sfgl::Triangel::Update(std::vector<TriangelData>& Triangels)
 {
 	for (int i = 0; i < Triangels.size();i++)
 	{
@@ -29,7 +29,7 @@ void  sfgl::Triangel::Update(std::vector<Triangel>& Triangels)
 	}
 }
 
-void  sfgl::Triangel::Update(Triangel& Triangels)
+void  sfgl::Triangel::Update(TriangelData& Triangels)
 {
 	Triangels.Vertex->vertexBufferData.clear();
 
@@ -51,7 +51,7 @@ void  sfgl::Triangel::Update(Triangel& Triangels)
 	Verticies::Update(Triangels.Vertex);
 }
 
-void  sfgl::Triangel::Draw(std::vector<Triangel>& Triangels)
+void  sfgl::Triangel::Draw(std::vector<TriangelData>& Triangels)
 {
 	for (int i = 0; i < Triangels.size(); i++)
 	{
@@ -59,12 +59,12 @@ void  sfgl::Triangel::Draw(std::vector<Triangel>& Triangels)
 	}
 }
 
-void  sfgl::Triangel::Draw(Triangel& Triangels)
+void  sfgl::Triangel::Draw(TriangelData& Triangels)
 {
 	Verticies::Draw(Triangels.Vertex, GL_TRIANGLES);
 }
 
-void  sfgl::Triangel::Clean(std::vector<Triangel>& Triangels)
+void  sfgl::Triangel::Clean(std::vector<TriangelData>& Triangels)
 {
 	for (int i = 0; i < Triangels.size(); i++)
 	{
@@ -72,7 +72,7 @@ void  sfgl::Triangel::Clean(std::vector<Triangel>& Triangels)
 	}
 }
 
-void  sfgl::Triangel::Clean(Triangel& Triangels)
+void  sfgl::Triangel::Clean(TriangelData& Triangels)
 {
 	Verticies::Clean(Triangels.Vertex);
 }

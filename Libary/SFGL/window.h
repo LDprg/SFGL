@@ -11,48 +11,50 @@
 
 namespace sfgl
 {
+
+	///	Struct of the data of a RectangelData
+	struct WindowData
+	{
+		/// WindowData Handle
+		GLFWwindow* window;
+
+		/// Vertex Array ID
+		GLuint VertexArrayID;
+
+		/// Shader Program ID
+		GLuint programID;
+	};
+
 	namespace Window
 	{
-		///	Struct of the data of a Rectangel
-		struct Window
-		{
-			/// Window Handle
-			GLFWwindow* window;
 
-			/// Vertex Array ID
-			GLuint VertexArrayID;
+		///	Creates the WindowData
+		void Create(WindowData&window);
 
-			/// Shader Program ID
-			GLuint programID;
-		};
+		/// Draw the WindowData
+		void Draw(WindowData& window);
 
-		///	Creates the Window
-		void Create(Window &window);
-
-		/// Draw the Window
-		void Draw(Window& window);
-
-		///	Clear the Window
-		void ClearScreen(Window& window);
+		///	Clear the WindowData
+		void ClearScreen(WindowData& window);
 
 		///	Get Key Event
 		///	@param key Key
 		///	@return Event Type
-		int GetKey(Window& window, int key);
+		int GetKey(WindowData& window, int key);
 
-		///	Close the Window in the next Frame
-		///	@param state should Window close
-		void ShouldClose(Window& window, int state);
+		///	Close the WindowData in the next Frame
+		///	@param state should WindowData close
+		void ShouldClose(WindowData& window, int state);
 
-		///	Return if Window should close
-		///	@return is Window closing
-		inline int ShouldClose(Window& window)
+		///	Return if WindowData should close
+		///	@return is WindowData closing
+		inline int ShouldClose(WindowData& window)
 		{
 			return	glfwWindowShouldClose(window.window);
 		}
 
-		///	Clean Window Variabeln
-		void Clean(Window& window);
+		///	Clean WindowData Variabeln
+		void Clean(WindowData& window);
 
 	}
 }

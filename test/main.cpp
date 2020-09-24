@@ -7,15 +7,15 @@
 
 using namespace sfgl;
 
-std::vector<Rectangel::Rectangel> Rectangels;
+std::vector<RectangelData> Rectangels;
 
-Window::Window window;
+WindowData window;
 
 int main()
 {
 	Window::Create(window);
 	
-	Rectangel::Rectangel rectangel;
+	RectangelData rectangel;
 
 	rectangel.EdgePos[0][0] = 1.f;
 	rectangel.EdgePos[0][1] = 1.f;

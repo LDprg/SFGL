@@ -1,11 +1,11 @@
 #include "SFGL\Rectangel.h"
 
-void sfgl::Rectangel::Swap(Rectangel& R1, Rectangel& R2)
+void sfgl::Rectangel::Swap(RectangelData& R1, RectangelData& R2)
 {
 	std::swap(R1, R2);
 }
 
-void sfgl::Rectangel::Create(std::vector<Rectangel>& Rectangels)
+void sfgl::Rectangel::Create(std::vector<RectangelData>& Rectangels)
 {
 	for (int i = 0; i < Rectangels.size(); i++)
 	{
@@ -13,15 +13,15 @@ void sfgl::Rectangel::Create(std::vector<Rectangel>& Rectangels)
 	}
 }
 
-void sfgl::Rectangel::Create(Rectangel& Rectangels)
+void sfgl::Rectangel::Create(RectangelData& Rectangels)
 {
-	Rectangels.Vertex = std::shared_ptr<Verticies::Verticies>(new Verticies::Verticies);
+	Rectangels.Vertex = std::shared_ptr<VerticiesData>(new VerticiesData);
 
 	Rectangels.Vertex->vertexBufferData.reserve(8);
 	Rectangels.Vertex->colorBufferData.reserve(12);
 }
 
-void sfgl::Rectangel::Update(std::vector<Rectangel>& Rectangels)
+void sfgl::Rectangel::Update(std::vector<RectangelData>& Rectangels)
 {
 	for (int i = 0; i < Rectangels.size(); i++)
 	{
@@ -29,7 +29,7 @@ void sfgl::Rectangel::Update(std::vector<Rectangel>& Rectangels)
 	}
 }
 
-void sfgl::Rectangel::Update(Rectangel& Rectangels)
+void sfgl::Rectangel::Update(RectangelData& Rectangels)
 {
 	Rectangels.Vertex->vertexBufferData.clear();
 
@@ -57,7 +57,7 @@ void sfgl::Rectangel::Update(Rectangel& Rectangels)
 	Verticies::Update(Rectangels.Vertex);
 }
 
-void sfgl::Rectangel::Draw(std::vector<Rectangel>& Rectangels)
+void sfgl::Rectangel::Draw(std::vector<RectangelData>& Rectangels)
 {
 	for (int i = 0; i < Rectangels.size(); i++)
 	{
@@ -65,12 +65,12 @@ void sfgl::Rectangel::Draw(std::vector<Rectangel>& Rectangels)
 	}
 }
 
-void sfgl::Rectangel::Draw(Rectangel& Rectangels)
+void sfgl::Rectangel::Draw(RectangelData& Rectangels)
 {
 	Verticies::Draw(Rectangels.Vertex, GL_TRIANGLE_STRIP);
 }
 
-void sfgl::Rectangel::Clean(std::vector<Rectangel>& Rectangels)
+void sfgl::Rectangel::Clean(std::vector<RectangelData>& Rectangels)
 {
 	for (int i = 0; i < Rectangels.size(); i++)
 	{
@@ -78,7 +78,7 @@ void sfgl::Rectangel::Clean(std::vector<Rectangel>& Rectangels)
 	}
 }
 
-void sfgl::Rectangel::Clean(Rectangel& Rectangels)
+void sfgl::Rectangel::Clean(RectangelData& Rectangels)
 {
 	Verticies::Clean(Rectangels.Vertex);
 }

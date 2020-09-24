@@ -10,57 +10,58 @@
 
 namespace sfgl
 {
+
+	///	Struct of the data of a RectangelData
+	struct RectangelData
+	{
+		///	Postion of RectangelData Edge		
+		float EdgePos[2][2];
+
+		///	Color of RectangelData Edge
+		float EdgeColor[3];
+
+		///	Vertex 
+		std::shared_ptr<VerticiesData> Vertex;
+	};
+
 	namespace Rectangel
 	{
 
-		///	Struct of the data of a Rectangel
-		struct Rectangel
-		{
-			///	Postion of Rectangel Edge		
-			float EdgePos[2][2];
-
-			///	Color of Rectangel Edge
-			float EdgeColor[3];
-
-			///	Vertex 
-			std::shared_ptr<Verticies::Verticies> Vertex;
-		};
-
 		/// Swap two Rectangels
-		/// @param	T1 First Rectangel
-		/// @param	T2 Second Rectangel
-		void Swap(Rectangel& R1, Rectangel& R2);
+		/// @param	T1 First RectangelData
+		/// @param	T2 Second RectangelData
+		void Swap(RectangelData& R1, RectangelData& R2);
 
-		///	Create Vertex of Rectangel 
+		///	Create Vertex of RectangelData 
 		///	@param Rectangels A list of Rectangels
-		void Create(std::vector<Rectangel>& Rectangels);
+		void Create(std::vector<RectangelData>& Rectangels);
 
-		///	Create Vertex of Rectangel 
-		///	@param Rectangels A Rectangel
-		void Create(Rectangel& Rectangels);
+		///	Create Vertex of RectangelData 
+		///	@param Rectangels A RectangelData
+		void Create(RectangelData& Rectangels);
 
-		///	Update Vertex of Rectangel 
+		///	Update Vertex of RectangelData 
 		///	@param Rectangels A list of Rectangels
-		void Update(std::vector<Rectangel>& Rectangels);
+		void Update(std::vector<RectangelData>& Rectangels);
 
-		///	Update Vertex of Rectangel 
-		///	@param Rectangels A Rectangel
-		void Update(Rectangel& Rectangels);
+		///	Update Vertex of RectangelData 
+		///	@param Rectangels A RectangelData
+		void Update(RectangelData& Rectangels);
 
-		///	Draw Vertex of Rectangel 
+		///	Draw Vertex of RectangelData 
 		///	@param Rectangels A list of Rectangels
-		void Draw(std::vector<Rectangel>& Rectangels);
+		void Draw(std::vector<RectangelData>& Rectangels);
 
-		///	Draw Vertex of Rectangel 
-		///	@param Rectangels A Rectangel
-		void Draw(Rectangel& Rectangels);
+		///	Draw Vertex of RectangelData 
+		///	@param Rectangels A RectangelData
+		void Draw(RectangelData& Rectangels);
 
-		///	Clean Vertex of Rectangel 
+		///	Clean Vertex of RectangelData 
 		///	@param Rectangels A list of Rectangels
-		void Clean(std::vector<Rectangel>& Rectangels);
+		void Clean(std::vector<RectangelData>& Rectangels);
 
-		///	Clean Vertex of Rectangel 
-		///	@param Rectangels A Rectangel
-		void Clean(Rectangel& Rectangels);
+		///	Clean Vertex of RectangelData 
+		///	@param Rectangels A RectangelData
+		void Clean(RectangelData& Rectangels);
 	}
 }

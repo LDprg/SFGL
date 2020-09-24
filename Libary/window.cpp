@@ -1,6 +1,6 @@
 #include "SFGL/window.h"
 
-void sfgl::Window::Create(Window& window)
+void sfgl::Window::Create(WindowData& window)
 {
 	// Init GLFW
 	if (!glfwInit())
@@ -14,7 +14,7 @@ void sfgl::Window::Create(Window& window)
 	glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);	//Just for MacOS compatiblility
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);	// No old OpenGL
 
-	// Create Window
+	// Create WindowData
 	window.window = glfwCreateWindow(1024, 768, "SFGL", nullptr, nullptr);
 	if (!window.window)
 	{
@@ -47,7 +47,7 @@ void sfgl::Window::Create(Window& window)
 	window.programID = Shader::loadStd();
 }
 
-void sfgl::Window::Draw(Window& window)
+void sfgl::Window::Draw(WindowData& window)
 {
 	// Swap buffer
 	glfwSwapBuffers(window.window);
@@ -57,7 +57,7 @@ void sfgl::Window::Draw(Window& window)
 	glUseProgram(window.programID);
 }
 
-void sfgl::Window::ClearScreen(Window& window)
+void sfgl::Window::ClearScreen(WindowData& window)
 {
 	// Dark blue background
 	glClearColor(0.f, 0.f, 0.4f, 0.f);
@@ -65,22 +65,22 @@ void sfgl::Window::ClearScreen(Window& window)
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-int sfgl::Window::GetKey(Window& window, int key)
+int sfgl::Window::GetKey(WindowData& window, int key)
 {
 	return glfwGetKey(window.window, key);
 }
 
-void sfgl::Window::ShouldClose(Window& window, int state)
+void sfgl::Window::ShouldClose(WindowData& window, int state)
 {
 	glfwSetWindowShouldClose(window.window, state);
 }
 
-void sfgl::Window::Clean(Window& window)
+void sfgl::Window::Clean(WindowData& window)
 {
 	glDeleteVertexArrays(1, &window.VertexArrayID);
 	glDeleteProgram(window.programID);
 
-	// Close OpenGL Window and terminate GLFW
+	// Close OpenGL WindowData and terminate GLFW
 	glfwDestroyWindow(window.window);
 	glfwTerminate();
 }

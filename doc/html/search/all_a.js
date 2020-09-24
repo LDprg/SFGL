@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['vertex_28',['Vertex',['../d8/d3f/structsfgl_1_1_rectangel_1_1_rectangel.html#a06db8fd758fb48eff8fffaa7c653f5b3',1,'sfgl::Rectangel::Rectangel::Vertex()'],['../da/d29/structsfgl_1_1_triangel_1_1_triangel.html#a1c62a006fe571a2757198dcbfdeda808',1,'sfgl::Triangel::Triangel::Vertex()']]],
-  ['vertexarrayid_29',['VertexArrayID',['../d0/d80/structsfgl_1_1_window_1_1_window.html#a0fd90c915ba0f0b3190cc86c6eee4670',1,'sfgl::Window::Window']]],
-  ['vertexbuffer_30',['vertexBuffer',['../d0/d1d/structsfgl_1_1_verticies_1_1_verticies.html#ad7209bc16c09984b569fc9238cdc8623',1,'sfgl::Verticies::Verticies']]],
-  ['vertexbufferdata_31',['vertexBufferData',['../d0/d1d/structsfgl_1_1_verticies_1_1_verticies.html#a005befd5a3a92f5536f5ab7866ba79a3',1,'sfgl::Verticies::Verticies']]],
-  ['verticies_32',['Verticies',['../d0/d1d/structsfgl_1_1_verticies_1_1_verticies.html',1,'sfgl::Verticies']]],
-  ['verticies_2eh_33',['Verticies.h',['../d6/df0/_verticies_8h.html',1,'']]]
+  ['vertex_28',['Vertex',['../d9/d31/structsfgl_1_1_rectangel_data.html#a875991534140175123940e41c6261240',1,'sfgl::RectangelData::Vertex()'],['../df/db1/structsfgl_1_1_triangel_data.html#a4bf6eb3675cacb5483821421ea8a0570',1,'sfgl::TriangelData::Vertex()']]],
+  ['vertexarrayid_29',['VertexArrayID',['../de/d77/structsfgl_1_1_window_data.html#a50b4e93292e24cf293de1837165bb131',1,'sfgl::WindowData']]],
+  ['vertexbuffer_30',['vertexBuffer',['../d9/d69/structsfgl_1_1_verticies_data.html#ae6164f626abd652b4b6ad4d2f4d1f755',1,'sfgl::VerticiesData']]],
+  ['vertexbufferdata_31',['vertexBufferData',['../d9/d69/structsfgl_1_1_verticies_data.html#a01924bd2a81b71d24f378a36c2fe59d9',1,'sfgl::VerticiesData']]],
+  ['verticies_2eh_32',['Verticies.h',['../d6/df0/_verticies_8h.html',1,'']]],
+  ['verticiesdata_33',['VerticiesData',['../d9/d69/structsfgl_1_1_verticies_data.html',1,'sfgl']]]
 ];

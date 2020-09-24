@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['programid_66',['programID',['../d0/d80/structsfgl_1_1_window_1_1_window.html#a878cff43fe4dba96ea5b0c8c7bd7d169',1,'sfgl::Window::Window']]]
+  ['programid_67',['programID',['../de/d77/structsfgl_1_1_window_data.html#a03a397d5136bb8e429f1375261b25fbc',1,'sfgl::WindowData']]]
 ];

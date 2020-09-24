@@ -1,6 +1,6 @@
 #include "SFGL/Verticies.h"
 
-void sfgl::Verticies::Update(std::vector<std::shared_ptr<Verticies>> Verticies)
+void sfgl::Verticies::Update(std::vector<std::shared_ptr<VerticiesData>> Verticies)
 {
 	for (int i = 0; i < Verticies.size(); i++)
 	{
@@ -8,7 +8,7 @@ void sfgl::Verticies::Update(std::vector<std::shared_ptr<Verticies>> Verticies)
 	}
 }
 
-void sfgl::Verticies::Update(std::shared_ptr<Verticies> Verticies)
+void sfgl::Verticies::Update(std::shared_ptr<VerticiesData> Verticies)
 {
 	// Generate 1 buffer, put the resulting identifier in vertexbuffer
 	glGenBuffers(1, &Verticies->vertexBuffer);
@@ -25,7 +25,7 @@ void sfgl::Verticies::Update(std::shared_ptr<Verticies> Verticies)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * Verticies->colorBufferData.size(), Verticies->colorBufferData.data(), GL_STATIC_DRAW);
 }
 
-void sfgl::Verticies::Draw(std::vector<std::shared_ptr<Verticies>> Verticies, GLenum mode)
+void sfgl::Verticies::Draw(std::vector<std::shared_ptr<VerticiesData>> Verticies, GLenum mode)
 {
 	for (int i = 0; i < Verticies.size(); i++)
 	{
@@ -33,7 +33,7 @@ void sfgl::Verticies::Draw(std::vector<std::shared_ptr<Verticies>> Verticies, GL
 	}
 }
 
-void sfgl::Verticies::Draw(std::shared_ptr<Verticies> Verticies, GLenum mode)
+void sfgl::Verticies::Draw(std::shared_ptr<VerticiesData> Verticies, GLenum mode)
 {
 	// 1st attribute buffer : vertices
 	glEnableVertexAttribArray(0);
@@ -64,7 +64,7 @@ void sfgl::Verticies::Draw(std::shared_ptr<Verticies> Verticies, GLenum mode)
 	glDisableVertexAttribArray(0);
 }
 
-void sfgl::Verticies::Clean(std::vector<std::shared_ptr<Verticies>> Verticies)
+void sfgl::Verticies::Clean(std::vector<std::shared_ptr<VerticiesData>> Verticies)
 {
 	for (int i = 0; i < Verticies.size(); i++)
 	{
@@ -72,7 +72,7 @@ void sfgl::Verticies::Clean(std::vector<std::shared_ptr<Verticies>> Verticies)
 	}
 }
 
-void sfgl::Verticies::Clean(std::shared_ptr<Verticies> Verticies)
+void sfgl::Verticies::Clean(std::shared_ptr<VerticiesData> Verticies)
 {
 	// Cleanup VBO
 	glDeleteBuffers(1, &Verticies->vertexBuffer);

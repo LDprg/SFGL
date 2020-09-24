@@ -10,57 +10,58 @@
 
 namespace sfgl
 {
+
+	///	Struct of the data of a TriangelData
+	struct TriangelData
+	{
+		///	Postion of TriangelData Edge		
+		float EdgePos[3][2];
+
+		///	Color of TriangelData Edge
+		float EdgeColor[3][3];
+
+		///	Vertex 
+		std::shared_ptr<VerticiesData> Vertex;
+	};
+
 	namespace Triangel
 	{
 
-		///	Struct of the data of a Triangel
-		struct Triangel
-		{
-			///	Postion of Triangel Edge		
-			float EdgePos[3][2];
-
-			///	Color of Triangel Edge
-			float EdgeColor[3][3];
-
-			///	Vertex 
-			std::shared_ptr<Verticies::Verticies> Vertex;
-		};
-
 		/// Swap two Triangels
-		/// @param	T1 First Triangel
-		/// @param	T2 Second Triangel
-		void Swap(Triangel& T1, Triangel& T2);
+		/// @param	T1 First TriangelData
+		/// @param	T2 Second TriangelData
+		void Swap(TriangelData& T1, TriangelData& T2);
 
-		///	Create Vertex of Triangel 
+		///	Create Vertex of TriangelData 
 		///	@param Triangels A list of Triangels
-		void Create(std::vector<Triangel>& Triangels);
+		void Create(std::vector<TriangelData>& Triangels);
 
-		///	Create Vertex of Triangel 
-		///	@param Triangels A Triangel
-		void Create(Triangel& Triangels);
+		///	Create Vertex of TriangelData 
+		///	@param Triangels A TriangelData
+		void Create(TriangelData& Triangels);
 
-		///	Update Vertex of Triangel 
+		///	Update Vertex of TriangelData 
 		///	@param Triangels A list of Triangels
-		void Update(std::vector<Triangel>& Triangels);
+		void Update(std::vector<TriangelData>& Triangels);
 
-		///	Update Vertex of Triangel 
-		///	@param Triangels A Triangel
-		void Update(Triangel& Triangels);
+		///	Update Vertex of TriangelData 
+		///	@param Triangels A TriangelData
+		void Update(TriangelData& Triangels);
 
-		///	Draw Vertex of Triangel 
+		///	Draw Vertex of TriangelData 
 		///	@param Triangels A list of Triangels
-		void Draw(std::vector<Triangel>& Triangels);
+		void Draw(std::vector<TriangelData>& Triangels);
 
-		///	Draw Vertex of Triangel 
-		///	@param Triangels A Triangel
-		void Draw(Triangel& Triangels);
+		///	Draw Vertex of TriangelData 
+		///	@param Triangels A TriangelData
+		void Draw(TriangelData& Triangels);
 
-		///	Clean Vertex of Triangel 
+		///	Clean Vertex of TriangelData 
 		///	@param Triangels A list of Triangels
-		void Clean(std::vector<Triangel>& Triangels);
+		void Clean(std::vector<TriangelData>& Triangels);
 
-		///	Clean Vertex of Triangel 
-		///	@param Triangels A Triangel
-		void Clean(Triangel& Triangels);
+		///	Clean Vertex of TriangelData 
+		///	@param Triangels A TriangelData
+		void Clean(TriangelData& Triangels);
 	}
 }
