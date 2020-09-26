@@ -1,9 +1,9 @@
 #include <vector>
 
-#include <SFGL/loadShader.h>
-#include <SFGL/window.h>
-#include <SFGL/Triangel.h>
-#include <SFGL/Rectangel.h>
+#include <SFGL/loadShader.hpp>
+#include <SFGL/window.hpp>
+#include <SFGL/Triangel.hpp>
+#include <SFGL/Rectangel.hpp>
 
 using namespace sfgl;
 
