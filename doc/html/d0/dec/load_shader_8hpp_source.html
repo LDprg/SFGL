@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>SFGL: test/loadShader.hpp Source File</title>
+<title>SFGL: includes/SFGL/loadShader.hpp Source File</title>
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -22,9 +22,9 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">SFGL
-   &#160;<span id="projectnumber">0</span>
+   &#160;<span id="projectnumber">0.0.0</span>
    </div>
-   <div id="projectbrief">Libary</div>
+   <div id="projectbrief">Super Fast Graphics Libary</div>
   </td>
  </tr>
  </tbody>
@@ -63,7 +63,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="../../dir_13e138d54eb8818da29c3992edef070a.html">test</a></li>  </ul>
+<li class="navelem"><a class="el" href="../../dir_09e761304027c904456130627fd4dcf5.html">includes</a></li><li class="navelem"><a class="el" href="../../dir_4abf86a44cf9770ca4a89810f43d19fe.html">SFGL</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -78,15 +78,24 @@ $(function() {
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;GL/glew.h&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;GL/gl3w.h&gt;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;GLFW/glfw3.h&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;glm/glm.hpp&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d0/dec/load_shader_8hpp.html#a833f10cca6a76fe34ae9efa23ac5e73c">   20</a></span>&#160;GLuint <a class="code" href="../../d0/dec/load_shader_8hpp.html#a833f10cca6a76fe34ae9efa23ac5e73c">LoadShaders</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* vertex_file_path, <span class="keyword">const</span> <span class="keywordtype">char</span>* fragment_file_path);</div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../da/d21/namespacesfgl.html">   12</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="../../da/d21/namespacesfgl.html">sfgl</a></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;{</div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d7/da9/namespacesfgl_1_1_shader.html">   14</a></span>&#160;    <span class="keyword">namespace </span>Shader</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d7/da9/namespacesfgl_1_1_shader.html#a0f15688f59ecf03db16fb71776ea022b">   21</a></span>&#160;        GLuint <a class="code" href="../../d7/da9/namespacesfgl_1_1_shader.html#a0f15688f59ecf03db16fb71776ea022b">loadFromFile</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* vertex_file_path, <span class="keyword">const</span> <span class="keywordtype">char</span>* fragment_file_path);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d7/da9/namespacesfgl_1_1_shader.html#a39add5dbb41eec71cf954765e15093ae">   25</a></span>&#160;        GLuint <a class="code" href="../../d7/da9/namespacesfgl_1_1_shader.html#a39add5dbb41eec71cf954765e15093ae">loadStd</a>();</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;}</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aload_shader_8hpp_html_a833f10cca6a76fe34ae9efa23ac5e73c"><div class="ttname"><a href="../../d0/dec/load_shader_8hpp.html#a833f10cca6a76fe34ae9efa23ac5e73c">LoadShaders</a></div><div class="ttdeci">GLuint LoadShaders(const char *vertex_file_path, const char *fragment_file_path)</div></div>
+<div class="ttc" id="anamespacesfgl_html"><div class="ttname"><a href="../../da/d21/namespacesfgl.html">sfgl</a></div><div class="ttdef"><b>Definition:</b> loadShader.hpp:13</div></div>
+<div class="ttc" id="anamespacesfgl_1_1_shader_html_a39add5dbb41eec71cf954765e15093ae"><div class="ttname"><a href="../../d7/da9/namespacesfgl_1_1_shader.html#a39add5dbb41eec71cf954765e15093ae">sfgl::Shader::loadStd</a></div><div class="ttdeci">GLuint loadStd()</div></div>
+<div class="ttc" id="anamespacesfgl_1_1_shader_html_a0f15688f59ecf03db16fb71776ea022b"><div class="ttname"><a href="../../d7/da9/namespacesfgl_1_1_shader.html#a0f15688f59ecf03db16fb71776ea022b">sfgl::Shader::loadFromFile</a></div><div class="ttdeci">GLuint loadFromFile(const char *vertex_file_path, const char *fragment_file_path)</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

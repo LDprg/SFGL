@@ -31,27 +31,29 @@ namespace sfgl
 	{	
 
 		///	Update the VerticiesData Buffers with Buffer Data
-		///	@param	VerticiesData A list of shared pointer of VerticiesData
+		///	@param	Verticies A list of shared pointer of VerticiesData
 		void Update(std::vector<std::shared_ptr<VerticiesData>> Verticies);
 
 		///	Update the VerticiesData Buffers with Buffer Data
-		///	@param	VerticiesData shared pointer of VerticiesData
+		///	@param	Verticies shared pointer of VerticiesData
 		void Update(std::shared_ptr<VerticiesData> Verticies);
 
 		///	Draw the VerticiesData
-		///	@param	VerticiesData A list of shared pointer of VerticiesData
+		///	@param	Verticies A list of shared pointer of VerticiesData
+		/// @param 	mode OpenGL draw mode
 		void Draw(std::vector<std::shared_ptr<VerticiesData>> Verticies, GLenum mode);
 
 		///	Draw the VerticiesData
-		///	@param	VerticiesData shared pointer of VerticiesData
+		///	@param	Verticies shared pointer of VerticiesData
+		/// @param 	mode OpenGL draw mode
 		void Draw(std::shared_ptr<VerticiesData> Verticies, GLenum mode);
 
 		///	Clean VerticiesData Data
-		///	@param	VerticiesData A list of shared pointer of VerticiesData
+		///	@param	Verticies A list of shared pointer of VerticiesData
 		void Clean(std::vector<std::shared_ptr<VerticiesData>> Verticies);
 
 		///	Clean VerticiesData Data
-		///	@param	VerticiesData shared pointer of VerticiesData
+		///	@param	Verticies shared pointer of VerticiesData
 		void Clean(std::shared_ptr<VerticiesData> Verticies);
 
 	}

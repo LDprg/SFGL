@@ -28,8 +28,8 @@ namespace sfgl
 	{
 
 		/// Swap two Rectangels
-		/// @param	T1 First RectangelData
-		/// @param	T2 Second RectangelData
+		/// @param	R1 First RectangelData
+		/// @param	R2 Second RectangelData
 		void Swap(RectangelData& R1, RectangelData& R2);
 
 		///	Create Vertex of RectangelData 

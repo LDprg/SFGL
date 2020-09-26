@@ -29,24 +29,30 @@ namespace sfgl
 	{
 
 		///	Creates the WindowData
+		/// @param window WindowData
 		void Create(WindowData&window);
 
 		/// Draw the WindowData
+		/// @param window WindowData
 		void Draw(WindowData& window);
 
 		///	Clear the WindowData
+		/// @param window WindowData
 		void ClearScreen(WindowData& window);
 
 		///	Get Key Event
+		/// @param window WindowData
 		///	@param key Key
 		///	@return Event Type
 		int GetKey(WindowData& window, int key);
 
 		///	Close the WindowData in the next Frame
+		/// @param window WindowData
 		///	@param state should WindowData close
 		void ShouldClose(WindowData& window, int state);
 
 		///	Return if WindowData should close
+		/// @param window WindowData
 		///	@return is WindowData closing
 		inline int ShouldClose(WindowData& window)
 		{
@@ -54,6 +60,7 @@ namespace sfgl
 		}
 
 		///	Clean WindowData Variabeln
+		/// @param window WindowData
 		void Clean(WindowData& window);
 
 	}

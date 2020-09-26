@@ -36,3 +36,9 @@ add_executable(SFGLTest test/main.cpp)
 target_link_libraries(SFGLTest opengl32)
 target_link_libraries(SFGLTest glfw3)
 target_link_libraries(SFGLTest libSFGL)
+
+find_package(Doxygen REQUIRED)
+
+add_custom_target(doc ALL
+                  COMMAND ${DOXYGEN_EXECUTABLE} ./config.doxy
+                  WORKING_DIRECTORY ../)
