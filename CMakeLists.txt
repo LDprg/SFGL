@@ -1,5 +1,5 @@
 # cmake VERSION
-cmake_minimum_required(VERSION 3.18.1)
+cmake_minimum_required(VERSION 3.18.0)
 
 # project name
 project(sfgl-cmake)
@@ -8,37 +8,67 @@ project(sfgl-cmake)
 set(CMAKE_CXX_STANDARD 17)
 
 # add include directory
-include_directories(includes)
-include_directories(externalLib/includes)
+include_directories("./includes")
+if (WIN32)
+	include_directories("./externalLib/windows/includes")
+endif (WIN32)
+
+if (UNIX)
+	include_directories("./externalLib/linux/gl3w/include")
+endif (UNIX)
 
 # add libary directory
-link_directories(externalLib/lib)
-link_directories(build)
+if (WIN32)
+	link_directories("./externalLib/windows/lib")
+endif (WIN32)
+
+link_directories("./build")
 
 # put all cpp into Libary var
-file(GLOB LibarySrc src/*.cpp)
+file(GLOB LibarySrc "./src/*.cpp")
 
 #define Präprozessor
-add_compile_definitions(GLEW_STATIC)
-add_compile_definitions(_DEBUG)
-add_compile_definitions(_CONSOLE)
+add_compile_definitions(DEBUG)
+remove_definitions(GLFW_DLL)
 
 # compiles Libary
-add_library(SFGL STATIC externalLib/src/gl3w.c ${LibarySrc})
+add_library(SFGL STATIC "./externalLib/linux/gl3w/src/gl3w.c" ${LibarySrc})
 
 # set .lib extension
-set_target_properties(SFGL PROPERTIES SUFFIX ".lib")
+if (WIN32)
+	set_target_properties(SFGL PROPERTIES SUFFIX ".lib")
+endif (WIN32)
 
 # compile Test 
-add_executable(SFGLTest test/main.cpp)
+add_executable(SFGLTest "./test/main.cpp")
+
+if (UNIX)
+	find_package(glfw3 REQUIRED)
+	find_package(OpenGL REQUIRED)
+endif (UNIX)
 
 # add libary
-target_link_libraries(SFGLTest opengl32)
-target_link_libraries(SFGLTest glfw3)
-target_link_libraries(SFGLTest libSFGL)
+if (WIN32)
+	target_link_libraries(SFGLTest opengl32)
+	target_link_libraries(SFGLTest glfw3)
+	target_link_libraries(SFGLTest libSFGL)
+endif (WIN32)
 
-find_package(Doxygen REQUIRED)
+if (UNIX)
+	target_link_libraries(SFGLTest glfw)
+	target_link_libraries(SFGLTest libSFGL.a)
+endif (UNIX)
 
-add_custom_target(doc ALL
-                  COMMAND ${DOXYGEN_EXECUTABLE} ./config.doxy
-                  WORKING_DIRECTORY ../)
+target_link_libraries(SFGLTest ${CMAKE_DL_LIBS})
+
+target_include_directories(SFGLTest PUBLIC
+                           $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
+                           $<INSTALL_INTERFACE:include>)
+
+if(WIN32)
+	find_package(Doxygen REQUIRED)
+
+	add_custom_target(doc ALL
+    	            COMMAND ${DOXYGEN_EXECUTABLE} ./config.doxy
+       		        WORKING_DIRECTORY ../)
+endif (WIN32)

@@ -1,4 +1,4 @@
-#include "SFGL\Rectangel.hpp"
+#include "SFGL/Rectangel.hpp"
 
 void sfgl::Rectangel::Swap(RectangelData& R1, RectangelData& R2)
 {

@@ -1,7 +1,15 @@
 #include "SFGL/window.hpp"
 
+void error_callback(int error, const char* description)
+{
+    fprintf(stderr, "Error: %s\n", description);
+}
+
+
 void sfgl::Window::Create(WindowData& window)
 {
+	glfwSetErrorCallback(error_callback);
+
 	// Init GLFW
 	if (!glfwInit())
 	{
@@ -16,7 +24,8 @@ void sfgl::Window::Create(WindowData& window)
 
 	// Create WindowData
 	window.window = glfwCreateWindow(1024, 768, "SFGL", nullptr, nullptr);
-	if (!window.window)
+
+	if (window.window == nullptr)
 	{
 		glfwTerminate();
 		throw std::runtime_error("Failed to create Window!");
