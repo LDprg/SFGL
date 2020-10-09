@@ -11,8 +11,7 @@ You can get the current development version from the [Git repository](https://gi
 
 ## Install
 
-Building the SFGL project in the Libary folder and take the lib and the header files and add to your project.
-Offical supported is only Windows x64 with OpenGL 3.3 support, but theoretical it works on Linux too.
+Build the SFGL project with cmake. Linking the lib and including the headers in the include folder.
 
 ## Learn
 
