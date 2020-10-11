@@ -1,6 +1,5 @@
 *.exe
 
 externalLib/linux/gl3w/
-doc/
 doc/html/
 build/
