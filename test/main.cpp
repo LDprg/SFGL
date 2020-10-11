@@ -9,11 +9,11 @@ using namespace sfgl;
 
 std::vector<RectangelData> Rectangels;
 
-WindowData window;
+Window window;
 
 int main()
 {
-	Window::Create(window);
+	window.Create();
 	
 	RectangelData rectangel;
 
@@ -34,21 +34,21 @@ int main()
 
 	do
 	{
-		Window::ClearScreen(window);
+		window.ClearScreen();
 
 		Rectangel::Draw(Rectangels);
 
-		Window::Draw(window);
+		window.Draw();
 
-		if (Window::GetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+		if (window.GetKey(GLFW_KEY_ESCAPE) == GLFW_PRESS)
 		{
-			Window::ShouldClose(window, 1);
+			window.ShouldClose(1);
 		}
-	} while (!Window::ShouldClose(window));
+	} while (!window.ShouldClose());
 
 	Rectangel::Clean(Rectangels);
 
-	Window::Clean(window);
+	window.Clean();
 
 	return EXIT_SUCCESS;
 }

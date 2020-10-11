@@ -1,4 +1,0 @@
-var searchData=
-[
-  ['update_62',['Update',['../d8/dc6/namespacesfgl_1_1_rectangel.html#a7c75bff5234d5441f5caf71ffa7cd290',1,'sfgl::Rectangel::Update(std::vector&lt; RectangelData &gt; &amp;Rectangels)'],['../d8/dc6/namespacesfgl_1_1_rectangel.html#a029fb85f826255fe80c3ed2e226bef63',1,'sfgl::Rectangel::Update(RectangelData &amp;Rectangels)'],['../db/dc9/namespacesfgl_1_1_triangel.html#ae0ed62043e5cb8c4c80dede449176c3b',1,'sfgl::Triangel::Update(std::vector&lt; TriangelData &gt; &amp;Triangels)'],['../db/dc9/namespacesfgl_1_1_triangel.html#ab02f7390c820c535228f6b5d6aa9fdd2',1,'sfgl::Triangel::Update(TriangelData &amp;Triangels)'],['../de/dc1/namespacesfgl_1_1_verticies.html#a568e44179af70a09a0f61a6790535250',1,'sfgl::Verticies::Update(std::vector&lt; std::shared_ptr&lt; VerticiesData &gt;&gt; Verticies)'],['../de/dc1/namespacesfgl_1_1_verticies.html#a1409764c195e13355b591f65c9d44097',1,'sfgl::Verticies::Update(std::shared_ptr&lt; VerticiesData &gt; Verticies)']]]
-];

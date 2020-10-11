@@ -2,11 +2,11 @@
 
 void error_callback(int error, const char* description)
 {
-    fprintf(stderr, "Error: %s\n", description);
+	std::cerr << "Error " << error << ": " << description << std::endl;
 }
 
 
-void sfgl::Window::Create(WindowData& window)
+void sfgl::Window::Create()
 {
 	glfwSetErrorCallback(error_callback);
 
@@ -23,16 +23,16 @@ void sfgl::Window::Create(WindowData& window)
 	glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);	// No old OpenGL
 
 	// Create WindowData
-	window.window = glfwCreateWindow(1024, 768, "SFGL", nullptr, nullptr);
+	mWindow = glfwCreateWindow(1024, 768, "SFGL", nullptr, nullptr);
 
-	if (window.window == nullptr)
+	if (mWindow == nullptr)
 	{
 		glfwTerminate();
 		throw std::runtime_error("Failed to create Window!");
 	}
 
 	// Create OpenGL context
-	glfwMakeContextCurrent(window.window);
+	glfwMakeContextCurrent(mWindow);
 
 	//Init glew
 	if (gl3wInit() != GL3W_OK)
@@ -41,55 +41,17 @@ void sfgl::Window::Create(WindowData& window)
 	}
 
 	// Ensure we can capture the escape key being pressed below
-	glfwSetInputMode(window.window, GLFW_STICKY_KEYS, GL_TRUE);
+	glfwSetInputMode(mWindow, GLFW_STICKY_KEYS, GL_TRUE);
 
 	// Enable depth test
 	glEnable(GL_DEPTH_TEST);
 	// Accept fragment if it closer to the camera than the former one
 	glDepthFunc(GL_LESS);
 
-	glGenVertexArrays(1, &window.VertexArrayID);
-	glBindVertexArray(window.VertexArrayID);
+	glGenVertexArrays(1, &mVertexArrayID);
+	glBindVertexArray(mVertexArrayID);
 
 	// Create and compile our GLSL program from the shaders
-	//w_programID = Shader::loadFromFile("shader.vert", "shader.frag");
-	window.programID = Shader::loadStd();
-}
-
-void sfgl::Window::Draw(WindowData& window)
-{
-	// Swap buffer
-	glfwSwapBuffers(window.window);
-	glfwPollEvents();
-
-	// Use shader
-	glUseProgram(window.programID);
-}
-
-void sfgl::Window::ClearScreen(WindowData& window)
-{
-	// Dark blue background
-	glClearColor(0.f, 0.f, 0.4f, 0.f);
-	// Clear the screen
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-}
-
-int sfgl::Window::GetKey(WindowData& window, int key)
-{
-	return glfwGetKey(window.window, key);
-}
-
-void sfgl::Window::ShouldClose(WindowData& window, int state)
-{
-	glfwSetWindowShouldClose(window.window, state);
-}
-
-void sfgl::Window::Clean(WindowData& window)
-{
-	glDeleteVertexArrays(1, &window.VertexArrayID);
-	glDeleteProgram(window.programID);
-
-	// Close OpenGL WindowData and terminate GLFW
-	glfwDestroyWindow(window.window);
-	glfwTerminate();
+	//mProgramID = Shader::loadFromFile("shader.vert", "shader.frag");
+	mProgramID = Shader::loadStd();
 }

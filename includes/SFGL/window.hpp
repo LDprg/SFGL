@@ -13,55 +13,73 @@ namespace sfgl
 {
 
 	///	Struct of the data of a RectangelData
-	struct WindowData
+	class Window
 	{
+	public:
 		/// WindowData Handle
-		GLFWwindow* window;
+		GLFWwindow* mWindow;
 
 		/// Vertex Array ID
-		GLuint VertexArrayID;
+		GLuint mVertexArrayID;
 
 		/// Shader Program ID
-		GLuint programID;
-	};
+		GLuint mProgramID;
 
-	namespace Window
-	{
+		///	Creates the Window
+		void Create();
 
-		///	Creates the WindowData
-		/// @param window WindowData
-		void Create(WindowData&window);
-
-		/// Draw the WindowData
-		/// @param window WindowData
-		void Draw(WindowData& window);
-
-		///	Clear the WindowData
-		/// @param window WindowData
-		void ClearScreen(WindowData& window);
-
-		///	Get Key Event
-		/// @param window WindowData
-		///	@param key Key
-		///	@return Event Type
-		int GetKey(WindowData& window, int key);
-
-		///	Close the WindowData in the next Frame
-		/// @param window WindowData
-		///	@param state should WindowData close
-		void ShouldClose(WindowData& window, int state);
-
-		///	Return if WindowData should close
-		/// @param window WindowData
-		///	@return is WindowData closing
-		inline int ShouldClose(WindowData& window)
+		/// Draw the Window
+		void Draw()
 		{
-			return	glfwWindowShouldClose(window.window);
+			// Swap buffer
+			glfwSwapBuffers(mWindow);
+			glfwPollEvents();
+
+			// Use shader
+			glUseProgram(mProgramID);
 		}
 
-		///	Clean WindowData Variabeln
-		/// @param window WindowData
-		void Clean(WindowData& window);
+		///	Clear the Window
+		void ClearScreen()
+		{
+			// Dark blue background
+			glClearColor(0.f, 0.f, 0.4f, 0.f);
+			// Clear the screen
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+		}
 
-	}
+		///	Get Key Event
+		///	@param key Key
+		///	@return Event Type
+		int GetKey(int key)
+		{
+			return glfwGetKey(mWindow, key);
+		}
+
+		///	Close the Window in the next Frame
+		///	@param state should Window close
+		void ShouldClose(int state)
+		{
+			glfwSetWindowShouldClose(mWindow, state);
+		}
+
+		///	Return if Windowshould close
+		///	@return is Window closing
+		int ShouldClose()
+		{
+			return	glfwWindowShouldClose(mWindow);
+		}
+
+		///	Clean Window Variabel
+		void Clean()
+		{
+			glDeleteVertexArrays(1, &mVertexArrayID);
+			glDeleteProgram(mProgramID);
+
+			// Close OpenGL WindowData and terminate GLFW
+			glfwDestroyWindow(mWindow);
+			glfwTerminate();
+		}
+
+	};
 }
