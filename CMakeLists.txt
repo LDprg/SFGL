@@ -1,73 +1,49 @@
 # cmake VERSION
-cmake_minimum_required(VERSION 3.0.0)
+cmake_minimum_required(VERSION 3.8.0)
 
 # project name
-project(sfgl-cmake)
+project("SFGL")
 
 # set the C++17 standard
 set(CMAKE_CXX_STANDARD 17)
 
-set(DOC FALSE)
-
-# add include directory
-include_directories("./includes")
-if (WIN32)
-	include_directories("./externalLib/windows/includes")
-endif (WIN32)
-
-include_directories("./externalLib/include")
-
-# add libary directory
-if (WIN32)
-	link_directories("./externalLib/windows/lib")
-endif (WIN32)
-
-link_directories("./build")
+set(DOC true)
 
 # put all cpp into Libary var
-file(GLOB LibarySrc "./src/*.cpp")
+file(GLOB SFGL_SRC "./src/SFGL/*.cpp")
 
 #define Präprozessor
 add_compile_definitions(DEBUG)
 remove_definitions(GLFW_DLL)
 
 # compiles Libary
-add_library(SFGL STATIC "./externalLib/src/gl3w.c" ${LibarySrc})
+add_library(SFGL STATIC "./externalLib/src/gl3w.c" ${SFGL_SRC})
 
 # set .lib extension
 if (WIN32)
 	set_target_properties(SFGL PROPERTIES SUFFIX ".lib")
 endif (WIN32)
 
-# compile Test 
-add_executable(SFGLTest "./test/main.cpp")
-
 if (UNIX)
+	if (POLICY CMP0072)
+		cmake_policy (SET CMP0072 OLD)
+	endif(POLICY CMP0072)
+
 	find_package(glfw3 REQUIRED)
 	find_package(OpenGL REQUIRED)
 endif (UNIX)
 
-# add libary
+# add include directory
+target_include_directories(SFGL PUBLIC "${PROJECT_SOURCE_DIR}/include")
+
 if (WIN32)
-	target_link_libraries(SFGLTest glfw3)
-	target_link_libraries(SFGLTest libSFGL)
+	target_include_directories(SFGL PUBLIC "${PROJECT_SOURCE_DIR}/externalLib/windows/include")
 endif (WIN32)
 
-if (UNIX)
-	target_link_libraries(SFGLTest glfw)
-	target_link_libraries(SFGLTest libSFGL.a)
-endif (UNIX)
+target_include_directories(SFGL PUBLIC "${PROJECT_SOURCE_DIR}/externalLib/include")
 
-target_link_libraries(SFGLTest ${CMAKE_DL_LIBS})
-
-target_include_directories(SFGLTest PUBLIC
-                           $<BUILD_INTERFACE:${CMAKE_CURRENT_LIST_DIR}/include>
-                           $<INSTALL_INTERFACE:include>)
+add_subdirectory(test)
 
 if(DOC)
-	find_package(Doxygen REQUIRED)
-
-	add_custom_target(doc ALL
-    	            COMMAND ${DOXYGEN_EXECUTABLE} ./config.doxy
-       		        WORKING_DIRECTORY ../)
+	add_subdirectory(doc)	
 endif (DOC)
