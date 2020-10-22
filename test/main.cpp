@@ -1,7 +1,7 @@
 #include <vector>
 
-#include <SFGL/loadShader.hpp>
-#include <SFGL/window.hpp>
+#include <SFGL/Graphics/loadShader.hpp>
+#include <SFGL/Graphics/Window.hpp>
 
 using namespace sfgl;
 

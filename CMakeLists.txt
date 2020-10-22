@@ -10,7 +10,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(DOC true)
 
 # put all cpp into Libary var
-file(GLOB SFGL_SRC "./src/SFGL/*.cpp")
+file(GLOB SFGL_SRC "./src/SFGL/*.cpp" "./src/SFGL/*/*.cpp")
 
 #define Präprozessor
 add_compile_definitions(DEBUG)

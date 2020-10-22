@@ -12,11 +12,11 @@
 namespace sfgl
 {
 
-	///	Struct of the data of a RectangelData
+	///	class of Window
 	class Window
 	{
 	public:
-		/// WindowData Handle
+		/// Window Handle
 		GLFWwindow* mWindow;
 
 		/// Vertex Array ID
@@ -76,7 +76,7 @@ namespace sfgl
 			glDeleteVertexArrays(1, &mVertexArrayID);
 			glDeleteProgram(mProgramID);
 
-			// Close OpenGL WindowData and terminate GLFW
+			// Close OpenGL Window and terminate GLFW
 			glfwDestroyWindow(mWindow);
 			glfwTerminate();
 		}

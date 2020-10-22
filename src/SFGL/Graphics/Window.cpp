@@ -1,4 +1,4 @@
-#include "SFGL/window.hpp"
+#include "SFGL/Graphics/Window.hpp"
 
 void error_callback(int error, const char* description)
 {

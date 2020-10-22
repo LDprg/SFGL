@@ -1,14 +1,14 @@
-#include "SFGL/Verticies.hpp"
+#include "SFGL/Graphics/Verticies.hpp"
 
-void sfgl::Verticies::Update(std::vector<std::shared_ptr<VerticiesData>> Verticies)
+void sfgl::Verticies::Update(std::vector<std::shared_ptr<Verticies>> Verticies)
 {
-	for (int i = 0; i < Verticies.size(); i++)
+	for (int i = 0; i < Verticies.size(); ++i)
 	{
 		Update(Verticies[i]);
 	}
 }
 
-void sfgl::Verticies::Update(std::shared_ptr<VerticiesData> Verticies)
+void sfgl::Verticies::Update(std::shared_ptr<Verticies> Verticies)
 {
 	// Generate 1 buffer, put the resulting identifier in vertexbuffer
 	glGenBuffers(1, &Verticies->vertexBuffer);
@@ -25,15 +25,15 @@ void sfgl::Verticies::Update(std::shared_ptr<VerticiesData> Verticies)
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * Verticies->colorBufferData.size(), Verticies->colorBufferData.data(), GL_STATIC_DRAW);
 }
 
-void sfgl::Verticies::Draw(std::vector<std::shared_ptr<VerticiesData>> Verticies, GLenum mode)
+void sfgl::Verticies::Draw(std::vector<std::shared_ptr<Verticies>> Verticies, GLenum mode)
 {
-	for (int i = 0; i < Verticies.size(); i++)
+	for (int i = 0; i < Verticies.size(); ++i)
 	{
 		Draw(Verticies[i], mode);
 	}
 }
 
-void sfgl::Verticies::Draw(std::shared_ptr<VerticiesData> Verticies, GLenum mode)
+void sfgl::Verticies::Draw(std::shared_ptr<Verticies> Verticies, GLenum mode)
 {
 	// 1st attribute buffer : vertices
 	glEnableVertexAttribArray(0);
@@ -64,15 +64,15 @@ void sfgl::Verticies::Draw(std::shared_ptr<VerticiesData> Verticies, GLenum mode
 	glDisableVertexAttribArray(0);
 }
 
-void sfgl::Verticies::Clean(std::vector<std::shared_ptr<VerticiesData>> Verticies)
+void sfgl::Verticies::Clean(std::vector<std::shared_ptr<Verticies>> Verticies)
 {
-	for (int i = 0; i < Verticies.size(); i++)
+	for (int i = 0; i < Verticies.size(); ++i)
 	{
 		Clean(Verticies[i]);
 	}
 }
 
-void sfgl::Verticies::Clean(std::shared_ptr<VerticiesData> Verticies)
+void sfgl::Verticies::Clean(std::shared_ptr<Verticies> Verticies)
 {
 	// Cleanup VBO
 	glDeleteBuffers(1, &Verticies->vertexBuffer);
