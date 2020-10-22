@@ -1,8 +1,8 @@
 *.exe
 
 .vs
+out
 
 externalLib/linux/gl3w/
 doc/html/
 build/
-out/
